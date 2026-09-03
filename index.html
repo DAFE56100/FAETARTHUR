@@ -59,35 +59,34 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: #f4efe6 url('enveloppe.jpg') no-repeat center center/cover;
+            background: url('enveloppe.jpg') no-repeat center center/cover;
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
             align-items: center;
-            z-index: 9999;
-            transition: transform 0.8s ease-in-out, opacity 0.6s ease-in-out;
+            z-index: 100;
+            transition: transform 0.9s cubic-bezier(0.77, 0, 0.175, 1), opacity 0.7s ease-in-out;
             cursor: pointer;
-            padding-bottom: 60px;
+            padding-bottom: 50px;
         }
 
         .click-to-open {
             font-family: 'Montserrat', sans-serif;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             text-transform: uppercase;
             letter-spacing: 5px;
             color: #4a4033;
-            background: rgba(255, 255, 255, 0.95);
-            padding: 14px 28px;
-            border-radius: 30px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            background: rgba(255, 255, 255, 0.9);
+            padding: 12px 24px;
+            border-radius: 25px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
             animation: pulse 1.5s infinite;
-            border: 1px solid #d4c5a9;
         }
 
         @keyframes pulse {
-            0% { transform: scale(1); opacity: 0.8; }
-            50% { transform: scale(1.05); opacity: 1; }
-            100% { transform: scale(1); opacity: 0.8; }
+            0% { opacity: 0.6; }
+            50% { opacity: 1; }
+            100% { opacity: 0.6; }
         }
 
         .fade-out {
@@ -96,7 +95,7 @@
             pointer-events: none;
         }
 
-        /* --- PREMIÈRE PAGE DU SITE --- */
+        /* --- PREMIÈRE PAGE --- */
         header {
             height: 100vh;
             background: linear-gradient(to bottom, rgba(0,0,0,0.25), rgba(0,0,0,0.8)), url('5a58078b-6ecd-4568-ad2f-5400f911b929.jpg') no-repeat center center/cover;
@@ -259,94 +258,23 @@
             text-align: center;
         }
 
-        /* --- SECTION COMPTE À REBOURS --- */
-        .countdown-section {
-            padding: 40px 20px;
-            text-align: center;
-            background-color: #fbf9f5;
-        }
-
-        .countdown-sub {
-            font-family: 'Cormorant Garamond', serif;
-            font-style: italic;
-            font-size: 1.1rem;
-            color: #666;
-            margin-bottom: 15px;
-        }
-
-        .countdown-title {
-            font-family: 'Cormorant Garamond', serif;
-            font-style: italic;
-            font-size: 2.5rem;
-            color: #2c2c2c;
-            margin-bottom: 0px;
-            font-weight: 400;
-        }
-
-        .countdown-timer {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 6px;
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 2.2rem;
-            color: #2c2c2c;
-            margin: 20px 0;
-        }
-
-        .countdown-unit {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            min-width: 60px;
-        }
-
-        .countdown-label {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.6rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: #777;
-            margin-top: 2px;
-        }
-
-        .countdown-sep {
-            font-weight: 300;
-            color: #8c7355;
-            margin-top: -15px;
-        }
-
-        .countdown-message {
-            margin-top: 30px;
-        }
-
-        .countdown-msg-title {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 2rem;
-            font-style: italic;
-            color: #2c2c2c;
-            line-height: 1.2;
-            margin: 0;
-        }
-
-        /* --- STYLE TIMELINE PROGRAMME --- */
+        /* --- STYLE TIMELINE PROGRAMME (INSPIRÉ DE L'IMAGE) --- */
         .prog-header {
-            margin-bottom: 30px;
-            margin-top: 20px;
+            margin-bottom: 40px;
         }
 
         .prog-sub {
             font-family: 'Cormorant Garamond', serif;
             font-style: italic;
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             color: #2c2c2c;
             margin: 0;
         }
 
         .prog-title {
             font-family: 'Montserrat', sans-serif;
-            font-size: 1.4rem;
-            letter-spacing: 5px;
+            font-size: 1.5rem;
+            letter-spacing: 6px;
             font-weight: 600;
             color: #2c2c2c;
             margin: 5px 0 0 0;
@@ -359,6 +287,7 @@
             padding: 20px 0;
         }
 
+        /* Ligne verticale centrale */
         .timeline::before {
             content: '';
             position: absolute;
@@ -372,12 +301,13 @@
 
         .timeline-item {
             position: relative;
-            margin-bottom: 40px;
+            margin-bottom: 45px;
             width: 100%;
             display: flex;
             align-items: center;
         }
 
+        /* Point noir central sur la ligne */
         .timeline-dot {
             position: absolute;
             left: 50%;
@@ -399,9 +329,10 @@
             width: 44%;
             text-align: left;
             padding-left: 15px;
-            font-size: 1.5rem;
+            font-size: 1.6rem;
         }
 
+        /* Alternance des côtés pour respecter la disposition de l'image */
         .timeline-item:nth-child(even) {
             flex-direction: row-reverse;
         }
@@ -420,7 +351,7 @@
 
         .t-time {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 1.2rem;
+            font-size: 1.25rem;
             font-weight: 600;
             letter-spacing: 1px;
             color: #2c2c2c;
@@ -428,12 +359,20 @@
 
         .t-name {
             font-family: 'Montserrat', sans-serif;
-            font-size: 0.8rem;
+            font-size: 0.85rem;
             letter-spacing: 2px;
             font-weight: 600;
             text-transform: uppercase;
             color: #2c2c2c;
             margin: 4px 0;
+            position: relative;
+        }
+
+        .t-name::after {
+            content: "💍"; /* Petite déco discrète */
+            font-size: 0.5rem;
+            vertical-align: middle;
+            margin-left: 3px;
         }
 
         .t-address {
@@ -444,6 +383,7 @@
             letter-spacing: 1px;
         }
 
+        /* Cartes classiques pour le reste (Hébergement, Code vestimentaire, Menu, RSVP) */
         .card {
             background: var(--white);
             border-radius: 12px;
@@ -559,39 +499,6 @@
 
         <div class="content-section">
 
-            <!-- SECTION COMPTE À REBOURS -->
-            <div class="countdown-section">
-                <div class="countdown-title">The countdown</div>
-                <div class="countdown-sub">to forever has begun...</div>
-                
-                <div class="countdown-timer">
-                    <div class="countdown-unit">
-                        <span id="days">000</span>
-                        <span class="countdown-label">Jours</span>
-                    </div>
-                    <span class="countdown-sep">:</span>
-                    <div class="countdown-unit">
-                        <span id="hours">00</span>
-                        <span class="countdown-label">Heures</span>
-                    </div>
-                    <span class="countdown-sep">:</span>
-                    <div class="countdown-unit">
-                        <span id="minutes">00</span>
-                        <span class="countdown-label">Minutes</span>
-                    </div>
-                    <span class="countdown-sep">:</span>
-                    <div class="countdown-unit">
-                        <span id="seconds">00</span>
-                        <span class="countdown-label">Secondes</span>
-                    </div>
-                </div>
-
-                <div class="countdown-message">
-                    <div style="font-size: 2rem; margin-bottom: 5px;">💍</div>
-                    <h3 class="countdown-msg-title">We can't wait<br>to celebrate</h3>
-                </div>
-            </div>
-
             <!-- PROGRAMME STYLE TIMELINE -->
             <div class="prog-header">
                 <div class="prog-sub">Le</div>
@@ -600,30 +507,33 @@
 
             <div class="timeline">
                 
+                <!-- 1. Cérémonie Civile -->
                 <div class="timeline-item">
                     <div class="timeline-content">
                         <div class="t-time">13h30</div>
-                        <div class="t-name">Cérémonie Civile</div>
+                        <div class="t-name" style="text-transform: uppercase;">Cérémonie Civile</div>
                         <div class="t-address">Mairie de Perret<br>15 Rue Kreiz Ker, 22570 Perret</div>
                     </div>
                     <div class="timeline-dot"></div>
                     <div class="timeline-icon">💍</div>
                 </div>
 
+                <!-- 2. Cérémonie Religieuse -->
                 <div class="timeline-item">
                     <div class="timeline-content">
                         <div class="t-time">14h30</div>
-                        <div class="t-name">Cérémonie Religieuse</div>
+                        <div class="t-name" style="text-transform: uppercase;">Cérémonie Religieuse</div>
                         <div class="t-address">Église St Nicodème<br>2 Rte de la croix rouge, 22570 Perret</div>
                     </div>
                     <div class="timeline-dot"></div>
                     <div class="timeline-icon">⛪</div>
                 </div>
 
+                <!-- 3. Réception & Festivités -->
                 <div class="timeline-item">
                     <div class="timeline-content">
                         <div class="t-time">17h30</div>
-                        <div class="t-name">Réception</div>
+                        <div class="t-name" style="text-transform: uppercase;">Réception</div>
                         <div class="t-address">Domaine Un Jour Parfait<br>Lanhellen Vihan, 22110 Rostrenen</div>
                     </div>
                     <div class="timeline-dot"></div>
@@ -696,27 +606,7 @@
             const envelope = document.getElementById('envelope-screen');
             envelope.classList.add('fade-out');
         }
+    </script>
 
-        // Script dynamique du compte à rebours
-        const weddingDate = new Date('May 15, 2027 13:30:00').getTime();
-
-        function updateCountdown() {
-            const now = new Date().getTime();
-            const distance = weddingDate - now;
-
-            if (distance > 0) {
-                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((distance % (1000 * 60)) / Ça arrive souvent quand une animation d'ouverture d'enveloppe bloque en JavaScript ou qu'un script ne charge pas correctement. 
-
-**Premières vérifications**
-* **Actualisez la page** en faisant un rechargement forcé (Ctrl + F5 sur Windows ou Cmd + Shift + R sur Mac) pour vider le cache du navigateur.
-* **Désactivez temporairement vos extensions** (comme les bloqueurs de publicité ou de pop-ups) qui bloquent parfois l'exécution des scripts d'animation.
-* **Essayez un autre navigateur** ou le mode navigation privée pour voir si le problème vient de vos cookies ou de votre historique.
-
-**Solutions techniques**
-* Si vous êtes sur un site interactif ou une invitation en ligne, vérifiez que votre navigateur est à jour.
-* Ouvrez la console de développement (touche F12) pour regarder si des erreurs rouges s'affichent, ce qui pourrait vous indiquer quel script bloque le chargement de la suite.
-
-Quel est le site ou l'application que vous essayez d'ouvrir ?
+</body>
+</html>
