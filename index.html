@@ -3,262 +3,271 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arthur & Fahasoavana - Notre Mariage</title>
+    <title>Arthur & Fahasoavana - Mariage</title>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-color: #fcfbf9;
-            --primary-color: #b89753;
-            --text-color: #333333;
-            --light-gold: #e0d5c1;
+            --bg-color: #fbf9f5;
+            --primary-gold: #c5a059;
+            --dark-text: #2c2c2c;
             --white: #ffffff;
+            --border-gold: #e2d3b3;
         }
 
         body {
             margin: 0;
             padding: 0;
-            background-color: var(--bg-color);
-            color: var(--text-color);
+            background-color: #1a1a1a;
+            color: var(--dark-text);
             font-family: 'Montserrat', sans-serif;
-            line-height: 1.6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
         }
 
+        /* Conteneur simulant l'écran du smartphone pour le web, responsive sur mobile */
+        .phone-container {
+            width: 100%;
+            max-width: 430px;
+            background-color: var(--bg-color);
+            min-height: 100vh;
+            box-shadow: 0 0 30px rgba(0,0,0,0.5);
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        @media (min-width: 431px) {
+            .phone-container {
+                height: 880px;
+                border-radius: 40px;
+                border: 10px solid #333;
+            }
+        }
+
+        /* En-tête / Hero Section avec la photo */
         header {
-            height: 100vh;
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('URL_DE_TA_PHOTO_ICI') no-repeat center center/cover;
+            height: 85vh;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.6)), url('5a58078b-6ecd-4568-ad2f-5400f911b929.jpg') no-repeat center center/cover;
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: flex-end;
             align-items: center;
             text-align: center;
             color: var(--white);
-            padding: 20px;
+            padding: 30px 20px;
+        }
+
+        header h3 {
+            font-size: 0.9rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+            color: #f0e6d2;
         }
 
         header h1 {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 3.5rem;
-            margin: 0;
-            letter-spacing: 2px;
-            color: #f9f6f0;
-        }
-
-        header h2 {
-            font-size: 1.2rem;
-            font-weight: 300;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            margin: 10px 0 20px 0;
+            font-size: 2.8rem;
+            margin: 0 0 10px 0;
+            font-weight: 400;
+            letter-spacing: 1px;
         }
 
         header p {
-            font-size: 1.1rem;
+            font-size: 0.95rem;
             font-style: italic;
+            margin-bottom: 30px;
+            color: #e8e8e8;
         }
 
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 60px 20px;
+        .content-section {
+            padding: 40px 25px;
+            text-align: center;
         }
 
-        section {
-            margin-bottom: 60px;
-            background: var(--white);
-            padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+        .verse {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.15rem;
+            font-style: italic;
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 40px;
+            padding: 0 10px;
         }
 
         h2.section-title {
             font-family: 'Cormorant Garamond', serif;
-            color: var(--primary-color);
-            font-size: 2.2rem;
-            text-align: center;
-            margin-top: 0;
-            margin-bottom: 30px;
-            border-bottom: 1px solid var(--light-gold);
-            padding-bottom: 10px;
-        }
-
-        .verse {
-            text-align: center;
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.3rem;
-            font-style: italic;
-            color: #555;
-            margin-bottom: 40px;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
-
-        th, td {
-            padding: 12px;
-            text-align: left;
-            border-bottom: 1px solid var(--light-gold);
-            font-size: 0.95rem;
-        }
-
-        th {
-            color: var(--primary-color);
+            color: var(--primary-gold);
+            font-size: 1.8rem;
+            margin-bottom: 25px;
             font-weight: 600;
+            letter-spacing: 1px;
+            border-bottom: 1px solid var(--border-gold);
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        .card {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 15px rgba(197, 160, 89, 0.08);
+            border: 1px solid var(--border-gold);
+            text-align: left;
+        }
+
+        .card h3 {
+            font-family: 'Cormorant Garamond', serif;
+            color: var(--primary-gold);
+            margin-top: 0;
+            font-size: 1.3rem;
+            border-bottom: 1px dashed var(--border-gold);
+            padding-bottom: 8px;
+        }
+
+        .time {
+            font-weight: 600;
+            color: var(--primary-gold);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         ul {
-            padding-left: 20px;
+            padding-left: 15px;
+            margin: 10px 0 0 0;
+            font-size: 0.9rem;
+            color: #444;
         }
 
         li {
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
 
-        .menu-category {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.4rem;
-            color: var(--primary-color);
-            margin-top: 20px;
-            margin-bottom: 10px;
-        }
-
-        .rsvp-box {
-            text-align: center;
-            background-color: #f9f6f0;
-            border: 1px solid var(--light-gold);
-        }
-
-        .rsvp-contacts {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin-top: 20px;
-            flex-wrap: wrap;
-        }
-
-        .contact-card {
-            background: var(--white);
-            padding: 15px 25px;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-        }
-
-        .contact-card a {
-            color: var(--primary-color);
+        .rsvp-btn {
+            display: block;
+            background-color: var(--primary-gold);
+            color: var(--white);
             text-decoration: none;
+            padding: 14px;
+            border-radius: 30px;
             font-weight: 500;
+            letter-spacing: 1px;
+            margin-top: 20px;
+            box-shadow: 0 4px 10px rgba(197, 160, 89, 0.3);
+            transition: background 0.3s;
         }
 
-        @media (max-width: 600px) {
-            header h1 { font-size: 2.5rem; }
-            section { padding: 20px; }
+        .rsvp-btn:hover {
+            background-color: #b08c45;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            font-size: 0.8rem;
+            color: #888;
+            font-family: 'Cormorant Garamond', serif;
+            letter-spacing: 2px;
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>Arthur & Fahasoavana</h1>
-        <h2>15 Mai 2027</h2>
-        <p>"L'amour ne passera jamais."</p>
-    </header>
+    <div class="phone-container">
 
-    <div class="container">
+        <!-- En-tête avec votre photo de couple -->
+        <header>
+            <h3>Nous nous unissons</h3>
+            <h1>Arthur & Fahasoavana</h1>
+            <p>Samedi 15 Mai 2027</p>
+        </header>
 
-        <div class="verse">
-            "Maintenant, trois choses sont toujours là: la foi, l'espérance et l'amour. Mais la plus grande des trois, c'est l'amour."<br>— <strong>I Cor. 13:13</strong>
-        </div>
+        <div class="content-section">
 
-        <!-- Programme -->
-        <section>
-            <h2 class="section-title">Programme de la Journée</h2>
-            <table>
-                <tr>
-                    <th>Heure</th>
-                    <th>Événement</th>
-                    <th>Lieu</th>
-                </tr>
-                <tr>
-                    <td>13h30</td>
-                    <td>Cérémonie Civile</td>
-                    <td>Mairie de Perret, 15 Rue Kreiz Ker, 22570 Perret</td>
-                </tr>
-                <tr>
-                    <td>14h30</td>
-                    <td>Cérémonie Religieuse</td>
-                    <td>Église St Nicodème, 2 Rte de la croix rouge, 22570 Perret</td>
-                </tr>
-                <tr>
-                    <td>17h30</td>
-                    <td>Réception & Festivités</td>
-                    <td>Domaine Un Jour Parfait, Lanhellen Vihan, 22110 Rostrenen</td>
-                </tr>
-            </table>
-        </section>
-
-        <!-- Hébergement -->
-        <section>
-            <h2 class="section-title">Informations Pratiques & Hébergement</h2>
-            <p>Pour les personnes souhaitant séjourner sur le domaine, nous vous invitons à contacter directement les futurs mariés, le nombre de couchages étant limité.</p>
-            <ul>
-                <li><strong>33 couchages aménageables</strong> (15 € à 25 € / personne) — <em>Prévoir draps, couette/housse de couette, housse d'oreiller et serviette.</em></li>
-                <li><strong>Emplacements Camping-Car</strong> disponibles</li>
-                <li><strong>Tentes en extérieur :</strong> merci de prévoir votre tente.</li>
-            </ul>
-        </section>
-
-        <!-- Code Vestimentaire -->
-        <section>
-            <h2 class="section-title">Code Vestimentaire</h2>
-            <p style="text-align: center;">Pour la cérémonie, nous vous invitons à privilégier une tenue élégante. N'hésitez pas à accessoiriser votre tenue afin d'y apporter une touche raffinée et personnelle.</p>
-        </section>
-
-        <!-- Menu -->
-        <section>
-            <h2 class="section-title">Menu de la Réception</h2>
-            
-            <div class="menu-category">Entrées</div>
-            <ul>
-                <li>Tartare de saumon, courgettes et tomates confites, crème basilic citronnée</li>
-                <li>Foie Gras de canard français et ses toasts (pain muesli et brioché), confitures de framboise, balsamique et fleur de sel</li>
-            </ul>
-
-            <div class="menu-category">Plats</div>
-            <ul>
-                <li>Pintadeau farci, gratin normand, pressé de courgette et sa sauce au cidre, lissé de patate douce et tomates rôties</li>
-                <li>Magret de canard, blinis de pommes de terre et lissé de patate douce sur carottes glacées et carottine braisée, jus corsé</li>
-            </ul>
-
-            <div class="menu-category">Fromages</div>
-            <ul>
-                <li>Fromages affinés, mesclun de salade et sa vinaigrette, noix, raisins et framboise</li>
-                <li>Fromage des producteurs locaux, mesclun de salade et sa vinaigrette, noix, raisins et framboise</li>
-            </ul>
-
-            <div class="menu-category">Dessert</div>
-            <ul>
-                <li>Wedding Cake, brochette de fruits de saison, coulis de fruits rouges</li>
-            </ul>
-        </section>
-
-        <!-- RSVP -->
-        <section class="rsvp-box">
-            <h2 class="section-title">Confirmation de Présence</h2>
-            <p>Veuillez nous confirmer votre présence en contactant directement :</p>
-            <div class="rsvp-contacts">
-                <div class="contact-card">
-                    <strong>Arthur</strong><br>
-                    <a href="tel:+3345706021">+33 4 57 06 02 1</a>
-                </div>
-                <div class="contact-card">
-                    <strong>Fahasoavana</strong><br>
-                    <a href="tel:+33601105448">+33 6 01 10 54 48</a>
-                </div>
+            <!-- Citation -->
+            <div class="verse">
+                "Maintenant, trois choses sont toujours là: la foi, l'espérance et l'amour. Mais la plus grande des trois, c'est l'amour."<br>
+                <strong style="font-size: 0.9rem; color: #777;">— I Cor. 13:13</strong>
             </div>
-        </section>
 
+            <!-- Programme -->
+            <h2 class="section-title">Programme</h2>
+
+            <div class="card">
+                <span class="time">13h30 — Cérémonie Civile</span>
+                <p style="margin: 8px 0 0 0; font-size: 0.9rem; color: #555;">Mairie de Perret<br><small>15 Rue Kreiz Ker, 22570 Perret</small></p>
+            </div>
+
+            <div class="card">
+                <span class="time">14h30 — Cérémonie Religieuse</span>
+                <p style="margin: 8px 0 0 0; font-size: 0.9rem; color: #555;">Église St Nicodème<br><small>2 Rte de la croix rouge, 22570 Perret</small></p>
+            </div>
+
+            <div class="card">
+                <span class="time">17h30 — Réception & Festivités</span>
+                <p style="margin: 8px 0 0 0; font-size: 0.9rem; color: #555;">Domaine Un Jour Parfait<br><small>Lanhellen Vihan, 22110 Rostrenen</small></p>
+            </div>
+
+            <!-- Hébergement -->
+            <h2 class="section-title" style="margin-top: 30px;">Hébergement</h2>
+            <div class="card" style="font-size: 0.9rem; color: #555;">
+                <p style="margin-top:0;">Pour séjourner sur le domaine (nombre de couchages limité, merci de contacter les mariés) :</p>
+                <ul>
+                    <li><strong>33 couchages aménageables</strong> (15€ à 25€/pers. - prévoir draps et serviettes)</li>
+                    <li><strong>Emplacements Camping-Car</strong> disponibles</li>
+                    <li><strong>Tentes en extérieur</strong> (prévoir votre tente)</li>
+                </ul>
+            </div>
+
+            <!-- Code Vestimentaire -->
+            <h2 class="section-title" style="margin-top: 30px;">Code Vestimentaire</h2>
+            <div class="card" style="font-size: 0.9rem; color: #555; text-align: center;">
+                <p style="margin: 0;">Pour la cérémonie, nous vous invitons à privilégier une <strong>tenue élégante</strong>. N'hésitez pas à l'accessoiriser pour y apporter une touche raffinée et personnelle.</p>
+            </div>
+
+            <!-- Menu -->
+            <h2 class="section-title" style="margin-top: 30px;">Menu de la Réception</h2>
+            
+            <div class="card">
+                <h3>Entrées</h3>
+                <ul>
+                    <li>Tartare de saumon, courgettes et tomates confites, crème basilic citronnée</li>
+                    <li>Foie Gras de canard français et ses toasts (pain muesli/brioché), confitures de framboise, balsamique et fleur de sel</li>
+                </ul>
+
+                <h3 style="margin-top: 20px;">Plats</h3>
+                <ul>
+                    <li>Pintadeau farci, gratin normand, pressé de courgette, sauce au cidre, lissé de patate douce et tomates rôties</li>
+                    <li>Magret de canard, blinis de pommes de terre, lissé de patate douce sur carottes glacées et carottine braisée, jus corsé</li>
+                </ul>
+
+                <h3 style="margin-top: 20px;">Fromages</h3>
+                <ul>
+                    <li>Fromages affinés ou producteurs locaux, mesclun de salade, noix, raisins et framboise</li>
+                </ul>
+
+                <h3 style="margin-top: 20px;">Dessert</h3>
+                <ul>
+                    <li>Wedding Cake & brochette de fruits de saison, coulis de fruits rouges</li>
+                </ul>
+            </div>
+
+            <!-- RSVP -->
+            <h2 class="section-title" style="margin-top: 30px;">RSVP</h2>
+            <div class="card" style="text-align: center;">
+                <p style="margin: 0 0 15px 0; font-size: 0.9rem;">Merci de confirmer votre présence :</p>
+                <a href="tel:+3345706021" class="rsvp-btn">📞 Arthur : +33 4 57 06 02 1</a>
+                <a href="tel:+33601105448" class="rsvp-btn" style="background-color: #333; margin-top: 10px;">📞 Fahasoavana : +33 6 01 10 54 48</a>
+            </div>
+
+            <footer>
+                ARTHUR & FAHASOAVANA — 2027
+            </footer>
+
+        </div>
     </div>
 
 </body>
