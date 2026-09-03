@@ -52,7 +52,7 @@
             }
         }
 
-        /* --- ÉCRAN ENVELOPPE AVEC TA VRAIE PHOTO --- */
+        /* --- ÉCRAN ENVELOPPE --- */
         #envelope-screen {
             position: fixed;
             top: 0;
@@ -95,10 +95,10 @@
             pointer-events: none;
         }
 
-        /* --- PREMIÈRE PAGE STYLE "WE DO" & NOIR ET BLANC --- */
+        /* --- PREMIÈRE PAGE DU SITE --- */
         header {
             height: 100vh;
-            background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.7)), url('5a58078b-6ecd-4568-ad2f-5400f911b929.jpg') no-repeat center center/cover;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.25), rgba(0,0,0,0.8)), url('5a58078b-6ecd-4568-ad2f-5400f911b929.jpg') no-repeat center center/cover;
             filter: grayscale(100%);
             display: flex;
             flex-direction: column;
@@ -114,12 +114,42 @@
             filter: none;
         }
 
+        /* Guirlandes lumineuses animées style clignotement doux */
         .fairy-lights {
-            font-size: 1.2rem;
-            letter-spacing: 12px;
-            color: #fff;
-            text-shadow: 0 0 8px #fff, 0 0 15px #fffae6;
-            margin-top: 5px;
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            padding: 0 10px;
+        }
+
+        .light {
+            width: 10px;
+            height: 14px;
+            background-color: #fffacd;
+            border-radius: 50%;
+            box-shadow: 0 0 12px 4px #fffae6, 0 0 25px 8px #ffcc00;
+            animation: blink 1.8s infinite alternate;
+        }
+
+        .light:nth-child(2) { animation-delay: 0.3s; }
+        .light:nth-child(3) { animation-delay: 0.6s; }
+        .light:nth-child(4) { animation-delay: 0.9s; }
+        .light:nth-child(5) { animation-delay: 1.2s; }
+
+        @keyframes blink {
+            0% { opacity: 0.3; transform: scale(0.8); box-shadow: 0 0 4px 1px #fffae6; }
+            100% { opacity: 1; transform: scale(1.2); box-shadow: 0 0 16px 6px #ffcc00; }
+        }
+
+        .header-verse {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.25rem; /* Agrandit le verset */
+            font-style: italic;
+            max-width: 360px;
+            line-height: 1.5;
+            color: #fceea7;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+            margin-top: 10px;
         }
 
         .header-center {
@@ -130,11 +160,11 @@
 
         .we-do-title {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 4.5rem;
+            font-size: 4rem;
             font-style: italic;
             font-weight: 300;
             color: #ffffff;
-            text-shadow: 0 0 15px rgba(255,255,255,0.8), 0 0 30px rgba(255,255,255,0.4);
+            text-shadow: 0 0 15px rgba(255,255,255,0.8);
             margin: 0;
             line-height: 1;
         }
@@ -144,17 +174,24 @@
             letter-spacing: 3px;
             text-transform: uppercase;
             color: #dcdcdc;
-            margin: 20px 0 8px 0;
+            margin: 15px 0 5px 0;
         }
 
+        /* Noms en brillance intense et élégante */
         .couple-names {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 2.3rem;
+            font-size: 2.6rem;
             letter-spacing: 2px;
             color: #ffffff;
             text-transform: uppercase;
             margin-bottom: 5px;
-            text-shadow: 0 2px 5px rgba(0,0,0,0.5);
+            text-shadow: 0 0 10px #ffffff, 0 0 20px #ffdf73, 0 0 30px #c5a059;
+            animation: shine 2.5s infinite alternate;
+        }
+
+        @keyframes shine {
+            0% { text-shadow: 0 0 8px #ffffff, 0 0 15px #ffdf73; }
+            100% { text-shadow: 0 0 15px #ffffff, 0 0 25px #fffae6, 0 0 35px #c5a059; }
         }
 
         .couple-names span {
@@ -162,7 +199,7 @@
             text-transform: lowercase;
             font-family: 'Cormorant Garamond', serif;
             color: var(--primary-gold);
-            font-size: 1.8rem;
+            font-size: 2rem;
             margin: 0 5px;
         }
 
@@ -171,23 +208,24 @@
             letter-spacing: 3px;
             text-transform: uppercase;
             color: #cccccc;
-            margin-bottom: 25px;
+            margin-bottom: 15px;
         }
 
+        /* Date plus grande et mise en valeur */
         .date-box {
             display: flex;
             align-items: center;
             justify-content: center;
             width: 100%;
-            max-width: 350px;
+            max-width: 380px;
             gap: 15px;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
         }
 
         .date-line {
             flex-grow: 1;
             height: 1px;
-            background-color: rgba(255,255,255,0.6);
+            background-color: rgba(255,255,255,0.7);
         }
 
         .date-center {
@@ -195,39 +233,32 @@
         }
 
         .date-day {
-            font-size: 0.8rem;
-            letter-spacing: 2px;
+            font-size: 0.85rem;
+            letter-spacing: 3px;
             text-transform: uppercase;
-            color: #ddd;
+            color: #ffdf73;
+            font-weight: 500;
         }
 
         .date-number {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 2.2rem;
+            font-size: 2.8rem; /* Agrandit la date */
             color: #fff;
             line-height: 1;
             margin: 2px 0;
+            text-shadow: 0 0 10px rgba(255,255,255,0.6);
         }
 
         .date-year {
-            font-size: 0.9rem;
-            letter-spacing: 3px;
-            color: #ddd;
+            font-size: 1.1rem; /* Agrandit l'année */
+            letter-spacing: 4px;
+            color: #fff;
+            font-weight: 600;
         }
 
         .content-section {
             padding: 40px 20px;
             text-align: center;
-        }
-
-        .verse-section {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.15rem;
-            font-style: italic;
-            color: #555;
-            line-height: 1.6;
-            margin-bottom: 40px;
-            padding: 0 10px;
         }
 
         h2.section-title {
@@ -312,22 +343,37 @@
 
     <div class="phone-container">
 
-        <!-- ÉCRAN ENVELOPPE AVEC TA VRAIE PHOTO -->
+        <!-- ÉCRAN ENVELOPPE -->
         <div id="envelope-screen" onclick="openInvitation()">
             <div class="click-to-open">CLIQUER POUR OUVRIR</div>
         </div>
 
         <!-- PREMIÈRE PAGE DU SITE -->
         <header>
-            <div class="fairy-lights">⚪ 💡 ⚪ 💡 ⚪ 💡 ⚪</div>
+            <!-- Guirlandes lumineuses animées -->
+            <div class="fairy-lights">
+                <div class="light"></div>
+                <div class="light"></div>
+                <div class="light"></div>
+                <div class="light"></div>
+                <div class="light"></div>
+            </div>
+
+            <!-- Verset biblique plus grand en haut -->
+            <div class="header-verse">
+                "Maintenant, trois choses sont toujours là: la foi, l'espérance et l'amour. Mais la plus grande des trois, c'est l'amour."<br>
+                <strong style="font-size: 0.95rem; color: #fff; display: block; margin-top: 4px;">— I Cor. 13:13</strong>
+            </div>
 
             <div class="header-center">
                 <div class="we-do-title">Nous Disons Oui</div>
                 <div class="subtitle-family">Unis avec leurs familles</div>
+                <!-- Noms en brillance -->
                 <div class="couple-names">Arthur <span>et</span> Fahasoavana</div>
                 <div class="invite-text">Ont la joie de vous inviter à leur mariage</div>
             </div>
 
+            <!-- Date plus grande -->
             <div class="date-box">
                 <div class="date-line"></div>
                 <div class="date-center">
@@ -340,12 +386,6 @@
         </header>
 
         <div class="content-section">
-
-            <!-- Verset biblique -->
-            <div class="verse-section">
-                "Maintenant, trois choses sont toujours là: la foi, l'espérance et l'amour. Mais la plus grande des trois, c'est l'amour."<br>
-                <strong style="font-size: 0.9rem; color: #777;">— I Cor. 13:13</strong>
-            </div>
 
             <!-- Programme -->
             <h2 class="section-title">Programme</h2>
