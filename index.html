@@ -12,7 +12,6 @@
             --dark-text: #2c2c2c;
             --white: #ffffff;
             --border-gold: #e2d3b3;
-            --envelope-color: #f4efe6;
         }
 
         body {
@@ -46,14 +45,17 @@
             }
         }
 
-        /* --- ÉCRAN ENVELOPPE --- */
+        /* --- ÉCRAN ENVELOPPE STYLE LUXE (Inspiré de votre photo) --- */
         #envelope-screen {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: var(--envelope-color);
+            background: 
+                radial-gradient(circle, rgba(255,255,255,0.8) 0%, rgba(245,240,230,0.95) 100%),
+                url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" opacity="0.05"><path d="M30 30 Q50 10 70 30 T90 70 Q70 90 50 70 T10 70 Z" fill="%23c5a059"/></svg>');
+            background-color: #f7f3ec;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -66,49 +68,92 @@
             box-sizing: border-box;
         }
 
-        .envelope-flap {
-            width: 260px;
-            height: 260px;
-            background: #ede6d6;
-            border: 1px solid var(--border-gold);
-            position: relative;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-            margin-bottom: 20px;
+        /* Motifs d'abeilles décoratives discrètes en fond */
+        .bee-decor {
+            font-size: 1.2rem;
+            color: #d4bc8e;
+            margin: 10px;
+            opacity: 0.7;
+            letter-spacing: 15px;
         }
 
+        .envelope-card-wrapper {
+            position: relative;
+            width: 320px;
+            height: 420px;
+            background: #fff;
+            border: 1px solid var(--border-gold);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        /* Rabat supérieur de l'enveloppe */
+        .envelope-flap {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 0;
+            border-left: 160px solid transparent;
+            border-right: 160px solid transparent;
+            border-top: 130px solid #efe8dc;
+            filter: drop-shadow(0 4px 4px rgba(0,0,0,0.03));
+        }
+
+        /* Sceau de cire royal doré */
         .wax-seal {
-            width: 70px;
-            height: 70px;
-            background-color: var(--primary-gold);
+            width: 85px;
+            height: 85px;
+            background: radial-gradient(circle, #dfc384 0%, var(--primary-gold) 70%, #9c7b37 100%);
             border-radius: 50%;
             display: flex;
             justify-content: center;
             align-items: center;
-            color: var(--white);
+            color: #fff;
             font-family: 'Cormorant Garamond', serif;
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             font-weight: bold;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-            border: 2px dashed #fff;
+            font-style: italic;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.2), inset 0 2px 4px rgba(255,255,255,0.4);
+            border: 2px solid #ecdcae;
+            z-index: 5;
+            margin-top: 40px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
         }
 
-        .envelope-text {
+        .envelope-title {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 1.5rem;
-            color: var(--primary-gold);
-            margin-top: 15px;
-            letter-spacing: 1px;
+            font-size: 1.1rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #887352;
+            margin-top: 35px;
         }
 
-        .envelope-subtext {
-            font-size: 0.85rem;
-            color: #666;
+        .envelope-names {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            color: var(--dark-text);
+            margin: 5px 0 15px 0;
+        }
+
+        .tap-to-open {
+            font-size: 0.8rem;
             text-transform: uppercase;
-            letter-spacing: 3px;
-            margin-top: 5px;
+            letter-spacing: 4px;
+            color: var(--primary-gold);
+            margin-top: 10px;
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 0.6; }
+            50% { opacity: 1; }
+            100% { opacity: 0.6; }
         }
 
         .fade-out {
@@ -250,16 +295,19 @@
 
     <div class="phone-container">
 
-        <!-- ÉCRAN D'OUVERTURE DE L'ENVELOPPE -->
+        <!-- ÉCRAN ENVELOPPE STYLE ROYAL (Inspiré de votre capture) -->
         <div id="envelope-screen" onclick="openInvitation()">
-            <div class="envelope-flap">
+            <div class="envelope-card-wrapper">
+                <div class="envelope-flap"></div>
+                <div class="bee-decor">🐝 ❀ 🐝</div>
                 <div class="wax-seal">A & F</div>
+                <div class="envelope-title">Society News</div>
+                <div class="envelope-names">Arthur & Fahasoavana</div>
+                <div class="tap-to-open">Touchez pour ouvrir</div>
             </div>
-            <div class="envelope-subtext">Invitation de Mariage</div>
-            <div class="envelope-text">Touchez pour ouvrir</div>
         </div>
 
-        <!-- CONTENU DU SITE DE MARIAGE -->
+        <!-- CONTENU DU SITE -->
         <header>
             <h3>Nous nous unissons</h3>
             <h1>Arthur & Fahasoavana</h1>
