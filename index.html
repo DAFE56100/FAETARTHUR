@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arthur & Fahasoavana - Notre Mariage</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #fcfbf9;
+            --primary-color: #b89753;
+            --text-color: #333333;
+            --light-gold: #e0d5c1;
+            --white: #ffffff;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+        }
+
+        header {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('URL_DE_TA_PHOTO_ICI') no-repeat center center/cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: var(--white);
+            padding: 20px;
+        }
+
+        header h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3.5rem;
+            margin: 0;
+            letter-spacing: 2px;
+            color: #f9f6f0;
+        }
+
+        header h2 {
+            font-size: 1.2rem;
+            font-weight: 300;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin: 10px 0 20px 0;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            font-style: italic;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        section {
+            margin-bottom: 60px;
+            background: var(--white);
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+        }
+
+        h2.section-title {
+            font-family: 'Cormorant Garamond', serif;
+            color: var(--primary-color);
+            font-size: 2.2rem;
+            text-align: center;
+            margin-top: 0;
+            margin-bottom: 30px;
+            border-bottom: 1px solid var(--light-gold);
+            padding-bottom: 10px;
+        }
+
+        .verse {
+            text-align: center;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            font-style: italic;
+            color: #555;
+            margin-bottom: 40px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid var(--light-gold);
+            font-size: 0.95rem;
+        }
+
+        th {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        .menu-category {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.4rem;
+            color: var(--primary-color);
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        .rsvp-box {
+            text-align: center;
+            background-color: #f9f6f0;
+            border: 1px solid var(--light-gold);
+        }
+
+        .rsvp-contacts {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .contact-card {
+            background: var(--white);
+            padding: 15px 25px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .contact-card a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        @media (max-width: 600px) {
+            header h1 { font-size: 2.5rem; }
+            section { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Arthur & Fahasoavana</h1>
+        <h2>15 Mai 2027</h2>
+        <p>"L'amour ne passera jamais."</p>
+    </header>
+
+    <div class="container">
+
+        <div class="verse">
+            "Maintenant, trois choses sont toujours là: la foi, l'espérance et l'amour. Mais la plus grande des trois, c'est l'amour."<br>— <strong>I Cor. 13:13</strong>
+        </div>
+
+        <!-- Programme -->
+        <section>
+            <h2 class="section-title">Programme de la Journée</h2>
+            <table>
+                <tr>
+                    <th>Heure</th>
+                    <th>Événement</th>
+                    <th>Lieu</th>
+                </tr>
+                <tr>
+                    <td>13h30</td>
+                    <td>Cérémonie Civile</td>
+                    <td>Mairie de Perret, 15 Rue Kreiz Ker, 22570 Perret</td>
+                </tr>
+                <tr>
+                    <td>14h30</td>
+                    <td>Cérémonie Religieuse</td>
+                    <td>Église St Nicodème, 2 Rte de la croix rouge, 22570 Perret</td>
+                </tr>
+                <tr>
+                    <td>17h30</td>
+                    <td>Réception & Festivités</td>
+                    <td>Domaine Un Jour Parfait, Lanhellen Vihan, 22110 Rostrenen</td>
+                </tr>
+            </table>
+        </section>
+
+        <!-- Hébergement -->
+        <section>
+            <h2 class="section-title">Informations Pratiques & Hébergement</h2>
+            <p>Pour les personnes souhaitant séjourner sur le domaine, nous vous invitons à contacter directement les futurs mariés, le nombre de couchages étant limité.</p>
+            <ul>
+                <li><strong>33 couchages aménageables</strong> (15 € à 25 € / personne) — <em>Prévoir draps, couette/housse de couette, housse d'oreiller et serviette.</em></li>
+                <li><strong>Emplacements Camping-Car</strong> disponibles</li>
+                <li><strong>Tentes en extérieur :</strong> merci de prévoir votre tente.</li>
+            </ul>
+        </section>
+
+        <!-- Code Vestimentaire -->
+        <section>
+            <h2 class="section-title">Code Vestimentaire</h2>
+            <p style="text-align: center;">Pour la cérémonie, nous vous invitons à privilégier une tenue élégante. N'hésitez pas à accessoiriser votre tenue afin d'y apporter une touche raffinée et personnelle.</p>
+        </section>
+
+        <!-- Menu -->
+        <section>
+            <h2 class="section-title">Menu de la Réception</h2>
+            
+            <div class="menu-category">Entrées</div>
+            <ul>
+                <li>Tartare de saumon, courgettes et tomates confites, crème basilic citronnée</li>
+                <li>Foie Gras de canard français et ses toasts (pain muesli et brioché), confitures de framboise, balsamique et fleur de sel</li>
+            </ul>
+
+            <div class="menu-category">Plats</div>
+            <ul>
+                <li>Pintadeau farci, gratin normand, pressé de courgette et sa sauce au cidre, lissé de patate douce et tomates rôties</li>
+                <li>Magret de canard, blinis de pommes de terre et lissé de patate douce sur carottes glacées et carottine braisée, jus corsé</li>
+            </ul>
+
+            <div class="menu-category">Fromages</div>
+            <ul>
+                <li>Fromages affinés, mesclun de salade et sa vinaigrette, noix, raisins et framboise</li>
+                <li>Fromage des producteurs locaux, mesclun de salade et sa vinaigrette, noix, raisins et framboise</li>
+            </ul>
+
+            <div class="menu-category">Dessert</div>
+            <ul>
+                <li>Wedding Cake, brochette de fruits de saison, coulis de fruits rouges</li>
+            </ul>
+        </section>
+
+        <!-- RSVP -->
+        <section class="rsvp-box">
+            <h2 class="section-title">Confirmation de Présence</h2>
+            <p>Veuillez nous confirmer votre présence en contactant directement :</p>
+            <div class="rsvp-contacts">
+                <div class="contact-card">
+                    <strong>Arthur</strong><br>
+                    <a href="tel:+3345706021">+33 4 57 06 02 1</a>
+                </div>
+                <div class="contact-card">
+                    <strong>Fahasoavana</strong><br>
+                    <a href="tel:+33601105448">+33 6 01 10 54 48</a>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+</body>
+</html>
