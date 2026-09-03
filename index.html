@@ -52,42 +52,121 @@
             }
         }
 
-        /* --- ÉCRAN ENVELOPPE AVEC TA VRAIE PHOTO --- */
+        /* --- ÉCRAN ENVELOPPE AVEC DENTELLE ET SCEAU --- */
         #envelope-screen {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            /* Remplace 'enveloppe.jpg' par le nom exact de ton fichier image si besoin */
-            background: url('enveloppe.jpg') no-repeat center center/cover;
+            background-color: #f4efe6;
+            background-image: radial-gradient(circle, #fcf9f5 0%, #e6dccb 100%);
             display: flex;
             flex-direction: column;
-            justify-content: flex-end;
+            justify-content: center;
             align-items: center;
             z-index: 100;
             transition: transform 0.9s cubic-bezier(0.77, 0, 0.175, 1), opacity 0.7s ease-in-out;
             cursor: pointer;
-            padding-bottom: 40px;
+            text-align: center;
+            padding: 20px;
+            overflow: hidden;
+        }
+
+        .envelope-wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 420px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .envelope-top-text {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.8rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: #6d6153;
+            margin-bottom: 10px;
+            position: absolute;
+            top: 22%;
+        }
+
+        .envelope-names {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.6rem;
+            font-style: italic;
+            color: #4a4033;
+            line-height: 1.15;
+            position: absolute;
+            top: 26%;
+        }
+
+        .envelope-v-flap {
+            position: absolute;
+            top: 40%;
+            left: 0;
+            width: 100%;
+            height: 170px;
+            background: linear-gradient(135deg, rgba(255,253,249,0.98) 0%, rgba(245,240,232,0.98) 100%);
+            clip-path: polygon(0 0, 100% 0, 50% 100%);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+            z-index: 2;
+        }
+
+        .envelope-v-flap::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: radial-gradient(circle, transparent 58%, #fff 60%);
+            background-size: 12px 12px;
+            opacity: 0.9;
+            pointer-events: none;
+        }
+
+        .wax-seal-oval {
+            position: absolute;
+            top: calc(40% + 130px);
+            left: 50%;
+            transform: translateX(-50%);
+            width: 95px;
+            height: 115px;
+            background: radial-gradient(circle at 35% 35%, #8c7d6b 0%, #5e5144 65%, #302922 100%);
+            border-radius: 50% / 45%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #d8cbaf;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.7rem;
+            font-style: italic;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.4), inset 0 2px 5px rgba(255,255,255,0.25);
+            border: 2px solid #6e5f50;
+            z-index: 10;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
         }
 
         .click-to-open {
+            position: absolute;
+            bottom: 15%;
             font-family: 'Montserrat', sans-serif;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             text-transform: uppercase;
             letter-spacing: 5px;
-            color: #4a4033;
-            background: rgba(255, 255, 255, 0.85);
-            padding: 10px 20px;
-            border-radius: 20px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            color: #6d6153;
             animation: pulse 1.5s infinite;
         }
 
         @keyframes pulse {
-            0% { opacity: 0.6; }
+            0% { opacity: 0.4; }
             50% { opacity: 1; }
-            100% { opacity: 0.6; }
+            100% { opacity: 0.4; }
         }
 
         .fade-out {
@@ -96,13 +175,13 @@
             pointer-events: none;
         }
 
-        /* --- CONTENU DU SITE DE MARIAGE --- */
+        /* --- PREMIÈRE PAGE APRÈS OUVERTURE (PHOTO DE COUPLE EN FOND) --- */
         header {
-            height: 85vh;
-            background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.6)), url('5a58078b-6ecd-4568-ad2f-5400f911b929.jpg') no-repeat center center/cover;
+            height: 100vh;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('5a58078b-6ecd-4568-ad2f-5400f911b929.jpg') no-repeat center center/cover;
             display: flex;
             flex-direction: column;
-            justify-content: flex-end;
+            justify-content: center;
             align-items: center;
             text-align: center;
             color: var(--white);
@@ -110,41 +189,35 @@
         }
 
         header h3 {
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             letter-spacing: 4px;
             text-transform: uppercase;
-            margin-bottom: 5px;
+            margin-bottom: 15px;
             color: #f0e6d2;
         }
 
         header h1 {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 2.8rem;
-            margin: 0 0 10px 0;
+            font-size: 3rem;
+            margin: 0 0 20px 0;
             font-weight: 400;
             letter-spacing: 1px;
         }
 
-        header p {
-            font-size: 0.95rem;
+        .header-verse {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.15rem;
             font-style: italic;
-            margin-bottom: 30px;
-            color: #e8e8e8;
+            max-width: 340px;
+            line-height: 1.6;
+            color: #f0f0f0;
+            margin-top: 10px;
+            padding: 0 10px;
         }
 
         .content-section {
             padding: 40px 20px;
             text-align: center;
-        }
-
-        .verse {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.15rem;
-            font-style: italic;
-            color: #555;
-            line-height: 1.6;
-            margin-bottom: 40px;
-            padding: 0 10px;
         }
 
         h2.section-title {
@@ -229,24 +302,28 @@
 
     <div class="phone-container">
 
-        <!-- ÉCRAN ENVELOPPE AVEC VOTRE VRAIE PHOTO -->
+        <!-- ÉCRAN ENVELOPPE INITIAL -->
         <div id="envelope-screen" onclick="openInvitation()">
-            <div class="click-to-open">CLIQUER POUR OUVRIR</div>
+            <div class="envelope-wrapper">
+                <div class="envelope-top-text">YOU'VE GOT MAIL FROM</div>
+                <div class="envelope-names">Arthur &<br>Fahasoavana</div>
+                <div class="envelope-v-flap"></div>
+                <div class="wax-seal-oval">A & F</div>
+                <div class="click-to-open">CLICK TO OPEN ...</div>
+            </div>
         </div>
 
-        <!-- CONTENU DU SITE DE MARIAGE -->
+        <!-- PREMIÈRE PAGE DU SITE (PHOTO DE COUPLE EN FOND + DETAILS) -->
         <header>
-            <h3>Nous nous unissons</h3>
+            <h3>Samedi 15 Mai 2027</h3>
             <h1>Arthur & Fahasoavana</h1>
-            <p>Samedi 15 Mai 2027</p>
+            <div class="header-verse">
+                "Maintenant, trois choses sont toujours là: la foi, l'espérance et l'amour. Mais la plus grande des trois, c'est l'amour."<br>
+                <strong style="font-size: 0.85rem; color: #ddd; display: block; margin-top: 5px;">I Cor. 13:13</strong>
+            </div>
         </header>
 
         <div class="content-section">
-
-            <div class="verse">
-                "Maintenant, trois choses sont toujours là: la foi, l'espérance et l'amour. Mais la plus grande des trois, c'est l'amour."<br>
-                <strong style="font-size: 0.9rem; color: #777;">— I Cor. 13:13</strong>
-            </div>
 
             <!-- Programme -->
             <h2 class="section-title">Programme</h2>
