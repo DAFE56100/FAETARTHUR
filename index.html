@@ -95,7 +95,7 @@
             pointer-events: none;
         }
 
-        /* --- PREMIÈRE PAGE --- */
+        /* --- PREMIÈRE PAGE DU SITE --- */
         header {
             height: 100vh;
             background: linear-gradient(to bottom, rgba(0,0,0,0.25), rgba(0,0,0,0.8)), url('5a58078b-6ecd-4568-ad2f-5400f911b929.jpg') no-repeat center center/cover;
@@ -114,6 +114,7 @@
             filter: none;
         }
 
+        /* Guirlandes lumineuses animées style clignotement doux */
         .fairy-lights {
             display: flex;
             justify-content: space-around;
@@ -142,7 +143,7 @@
 
         .header-verse {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 1.25rem;
+            font-size: 1.25rem; /* Agrandit le verset */
             font-style: italic;
             max-width: 360px;
             line-height: 1.5;
@@ -176,6 +177,7 @@
             margin: 15px 0 5px 0;
         }
 
+        /* Noms en brillance intense et élégante */
         .couple-names {
             font-family: 'Cormorant Garamond', serif;
             font-size: 2.6rem;
@@ -209,6 +211,7 @@
             margin-bottom: 15px;
         }
 
+        /* Date plus grande et mise en valeur */
         .date-box {
             display: flex;
             align-items: center;
@@ -239,7 +242,7 @@
 
         .date-number {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 2.8rem;
+            font-size: 2.8rem; /* Agrandit la date */
             color: #fff;
             line-height: 1;
             margin: 2px 0;
@@ -247,143 +250,29 @@
         }
 
         .date-year {
-            font-size: 1.1rem;
+            font-size: 1.1rem; /* Agrandit l'année */
             letter-spacing: 4px;
             color: #fff;
             font-weight: 600;
         }
 
         .content-section {
-            padding: 40px 15px;
+            padding: 40px 20px;
             text-align: center;
         }
 
-        /* --- STYLE TIMELINE PROGRAMME (INSPIRÉ DE L'IMAGE) --- */
-        .prog-header {
-            margin-bottom: 40px;
-        }
-
-        .prog-sub {
+        h2.section-title {
             font-family: 'Cormorant Garamond', serif;
-            font-style: italic;
-            font-size: 1.6rem;
-            color: #2c2c2c;
-            margin: 0;
-        }
-
-        .prog-title {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.5rem;
-            letter-spacing: 6px;
-            font-weight: 600;
-            color: #2c2c2c;
-            margin: 5px 0 0 0;
-        }
-
-        .timeline {
-            position: relative;
-            max-width: 400px;
-            margin: 0 auto;
-            padding: 20px 0;
-        }
-
-        /* Ligne verticale centrale */
-        .timeline::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 50%;
-            width: 2px;
-            background: #2c2c2c;
-            transform: translateX(-50%);
-        }
-
-        .timeline-item {
-            position: relative;
-            margin-bottom: 45px;
-            width: 100%;
-            display: flex;
-            align-items: center;
-        }
-
-        /* Point noir central sur la ligne */
-        .timeline-dot {
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 12px;
-            height: 12px;
-            background: #2c2c2c;
-            border-radius: 50%;
-            z-index: 2;
-        }
-
-        .timeline-content {
-            width: 44%;
-            text-align: right;
-            padding-right: 15px;
-        }
-
-        .timeline-icon {
-            width: 44%;
-            text-align: left;
-            padding-left: 15px;
-            font-size: 1.6rem;
-        }
-
-        /* Alternance des côtés pour respecter la disposition de l'image */
-        .timeline-item:nth-child(even) {
-            flex-direction: row-reverse;
-        }
-
-        .timeline-item:nth-child(even) .timeline-content {
-            text-align: left;
-            padding-left: 15px;
-            padding-right: 0;
-        }
-
-        .timeline-item:nth-child(even) .timeline-icon {
-            text-align: right;
-            padding-right: 15px;
-            padding-left: 0;
-        }
-
-        .t-time {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.25rem;
+            color: var(--primary-gold);
+            font-size: 1.8rem;
+            margin-bottom: 25px;
             font-weight: 600;
             letter-spacing: 1px;
-            color: #2c2c2c;
+            border-bottom: 1px solid var(--border-gold);
+            display: inline-block;
+            padding-bottom: 5px;
         }
 
-        .t-name {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.85rem;
-            letter-spacing: 2px;
-            font-weight: 600;
-            text-transform: uppercase;
-            color: #2c2c2c;
-            margin: 4px 0;
-            position: relative;
-        }
-
-        .t-name::after {
-            content: "💍"; /* Petite déco discrète */
-            font-size: 0.5rem;
-            vertical-align: middle;
-            margin-left: 3px;
-        }
-
-        .t-address {
-            font-size: 0.65rem;
-            color: #666;
-            text-transform: uppercase;
-            line-height: 1.3;
-            letter-spacing: 1px;
-        }
-
-        /* Cartes classiques pour le reste (Hébergement, Code vestimentaire, Menu, RSVP) */
         .card {
             background: var(--white);
             border-radius: 12px;
@@ -401,6 +290,14 @@
             font-size: 1.3rem;
             border-bottom: 1px dashed var(--border-gold);
             padding-bottom: 8px;
+        }
+
+        .time {
+            font-weight: 600;
+            color: var(--primary-gold);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         ul {
@@ -426,23 +323,10 @@
             margin-top: 20px;
             box-shadow: 0 4px 10px rgba(140, 115, 85, 0.3);
             transition: background 0.3s;
-            text-align: center;
         }
 
         .rsvp-btn:hover {
             background-color: #6e593f;
-        }
-
-        h2.section-title {
-            font-family: 'Cormorant Garamond', serif;
-            color: var(--primary-gold);
-            font-size: 1.8rem;
-            margin-bottom: 25px;
-            font-weight: 600;
-            letter-spacing: 1px;
-            border-bottom: 1px solid var(--border-gold);
-            display: inline-block;
-            padding-bottom: 5px;
         }
 
         footer {
@@ -466,6 +350,7 @@
 
         <!-- PREMIÈRE PAGE DU SITE -->
         <header>
+            <!-- Guirlandes lumineuses animées -->
             <div class="fairy-lights">
                 <div class="light"></div>
                 <div class="light"></div>
@@ -474,6 +359,7 @@
                 <div class="light"></div>
             </div>
 
+            <!-- Verset biblique plus grand en haut -->
             <div class="header-verse">
                 "Maintenant, trois choses sont toujours là: la foi, l'espérance et l'amour. Mais la plus grande des trois, c'est l'amour."<br>
                 <strong style="font-size: 0.95rem; color: #fff; display: block; margin-top: 4px;">— I Cor. 13:13</strong>
@@ -482,10 +368,12 @@
             <div class="header-center">
                 <div class="we-do-title">Nous Disons Oui</div>
                 <div class="subtitle-family">Unis avec leurs familles</div>
+                <!-- Noms en brillance -->
                 <div class="couple-names">Arthur <span>et</span> Fahasoavana</div>
                 <div class="invite-text">Ont la joie de vous inviter à leur mariage</div>
             </div>
 
+            <!-- Date plus grande -->
             <div class="date-box">
                 <div class="date-line"></div>
                 <div class="date-center">
@@ -499,51 +387,26 @@
 
         <div class="content-section">
 
-            <!-- PROGRAMME STYLE TIMELINE -->
-            <div class="prog-header">
-                <div class="prog-sub">Le</div>
-                <div class="prog-title">PROGRAMME</div>
+            <!-- Programme -->
+            <h2 class="section-title">Programme</h2>
+
+            <div class="card">
+                <span class="time">13h30 — Cérémonie Civile</span>
+                <p style="margin: 8px 0 0 0; font-size: 0.9rem; color: #555;">Mairie de Perret<br><small>15 Rue Kreiz Ker, 22570 Perret</small></p>
             </div>
 
-            <div class="timeline">
-                
-                <!-- 1. Cérémonie Civile -->
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <div class="t-time">13h30</div>
-                        <div class="t-name" style="text-transform: uppercase;">Cérémonie Civile</div>
-                        <div class="t-address">Mairie de Perret<br>15 Rue Kreiz Ker, 22570 Perret</div>
-                    </div>
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-icon">💍</div>
-                </div>
+            <div class="card">
+                <span class="time">14h30 — Cérémonie Religieuse</span>
+                <p style="margin: 8px 0 0 0; font-size: 0.9rem; color: #555;">Église St Nicodème<br><small>2 Rte de la croix rouge, 22570 Perret</small></p>
+            </div>
 
-                <!-- 2. Cérémonie Religieuse -->
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <div class="t-time">14h30</div>
-                        <div class="t-name" style="text-transform: uppercase;">Cérémonie Religieuse</div>
-                        <div class="t-address">Église St Nicodème<br>2 Rte de la croix rouge, 22570 Perret</div>
-                    </div>
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-icon">⛪</div>
-                </div>
-
-                <!-- 3. Réception & Festivités -->
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <div class="t-time">17h30</div>
-                        <div class="t-name" style="text-transform: uppercase;">Réception</div>
-                        <div class="t-address">Domaine Un Jour Parfait<br>Lanhellen Vihan, 22110 Rostrenen</div>
-                    </div>
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-icon">🥂</div>
-                </div>
-
+            <div class="card">
+                <span class="time">17h30 — Réception & Festivités</span>
+                <p style="margin: 8px 0 0 0; font-size: 0.9rem; color: #555;">Domaine Un Jour Parfait<br><small>Lanhellen Vihan, 22110 Rostrenen</small></p>
             </div>
 
             <!-- Hébergement -->
-            <h2 class="section-title" style="margin-top: 40px;">Hébergement</h2>
+            <h2 class="section-title" style="margin-top: 30px;">Hébergement</h2>
             <div class="card" style="font-size: 0.9rem; color: #555;">
                 <p style="margin-top:0;">Pour séjourner sur le domaine (nombre de couchages limité, merci de contacter les mariés) :</p>
                 <ul>
