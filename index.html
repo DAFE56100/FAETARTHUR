@@ -8,7 +8,7 @@
     <style>
         :root {
             --bg-color: #fbf9f5;
-            --primary-gold: #c5a059;
+            --primary-gold: #8c7355;
             --dark-text: #2c2c2c;
             --white: #ffffff;
             --border-gold: #e2d3b3;
@@ -45,17 +45,15 @@
             }
         }
 
-        /* --- ÉCRAN ENVELOPPE STYLE LUXE (Inspiré de votre photo) --- */
+        /* --- ÉCRAN ENVELOPPE STYLE DENTELLE & SCEAU BRONZE --- */
         #envelope-screen {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: 
-                radial-gradient(circle, rgba(255,255,255,0.8) 0%, rgba(245,240,230,0.95) 100%),
-                url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" opacity="0.05"><path d="M30 30 Q50 10 70 30 T90 70 Q70 90 50 70 T10 70 Z" fill="%23c5a059"/></svg>');
-            background-color: #f7f3ec;
+            background-color: #f4efe6;
+            background-image: radial-gradient(circle, #f9f6f0 0%, #ede6dc 100%);
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -68,92 +66,102 @@
             box-sizing: border-box;
         }
 
-        /* Motifs d'abeilles décoratives discrètes en fond */
-        .bee-decor {
-            font-size: 1.2rem;
-            color: #d4bc8e;
-            margin: 10px;
-            opacity: 0.7;
-            letter-spacing: 15px;
-        }
-
-        .envelope-card-wrapper {
+        .envelope-card {
             position: relative;
-            width: 320px;
-            height: 420px;
-            background: #fff;
-            border: 1px solid var(--border-gold);
+            width: 340px;
+            height: 480px;
+            background: #fbf9f5;
+            border: 1px solid #e3d8c8;
             box-shadow: 0 15px 35px rgba(0,0,0,0.08);
             display: flex;
             flex-direction: column;
-            justify-content: center;
             align-items: center;
-            padding: 20px;
+            padding-top: 50px;
         }
 
-        /* Rabat supérieur de l'enveloppe */
-        .envelope-flap {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 0;
-            height: 0;
-            border-left: 160px solid transparent;
-            border-right: 160px solid transparent;
-            border-top: 130px solid #efe8dc;
-            filter: drop-shadow(0 4px 4px rgba(0,0,0,0.03));
-        }
-
-        /* Sceau de cire royal doré */
-        .wax-seal {
-            width: 85px;
-            height: 85px;
-            background: radial-gradient(circle, #dfc384 0%, var(--primary-gold) 70%, #9c7b37 100%);
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: #fff;
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.8rem;
-            font-weight: bold;
-            font-style: italic;
-            box-shadow: 0 6px 15px rgba(0,0,0,0.2), inset 0 2px 4px rgba(255,255,255,0.4);
-            border: 2px solid #ecdcae;
-            z-index: 5;
-            margin-top: 40px;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
-        }
-
-        .envelope-title {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.1rem;
+        .envelope-top-text {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.85rem;
             letter-spacing: 3px;
             text-transform: uppercase;
-            color: #887352;
-            margin-top: 35px;
+            color: #776b5d;
+            margin-bottom: 10px;
         }
 
         .envelope-names {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 1.8rem;
-            color: var(--dark-text);
-            margin: 5px 0 15px 0;
+            font-size: 2.2rem;
+            font-style: italic;
+            color: #4a4033;
+            line-height: 1.2;
+            margin-bottom: 20px;
         }
 
-        .tap-to-open {
-            font-size: 0.8rem;
+        /* Rabat de l'enveloppe orné de dentelle blanche */
+        .envelope-lace-flap {
+            position: absolute;
+            top: 130px;
+            left: -10px;
+            width: 360px;
+            height: 110px;
+            background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(245,240,232,0.95) 100%);
+            clip-path: polygon(0 0, 50% 100%, 100% 0);
+            border-bottom: 3px solid #fff;
+            box-shadow: 0 10px 15px rgba(0,0,0,0.05);
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+        }
+
+        /* Effet visuel de dentelle sur les bords du rabat */
+        .envelope-lace-flap::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 25px;
+            background-image: radial-gradient(circle, transparent 60%, #fff 62%);
+            background-size: 12px 12px;
+            opacity: 0.9;
+        }
+
+        /* Sceau de cire ovale couleur bronze/taupe */
+        .wax-seal-oval {
+            position: absolute;
+            top: 210px;
+            width: 85px;
+            height: 105px;
+            background: radial-gradient(circle, #7a6b5d 0%, #5e5144 70%, #3d342b 100%);
+            border-radius: 50% / 45%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #d4c5a9;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.6rem;
+            font-style: italic;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3), inset 0 2px 4px rgba(255,255,255,0.2);
+            border: 2px solid #8c7d6b;
+            z-index: 5;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+
+        .click-to-open {
+            position: absolute;
+            bottom: 40px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.75rem;
             text-transform: uppercase;
             letter-spacing: 4px;
-            color: var(--primary-gold);
-            margin-top: 10px;
+            color: #776b5d;
             animation: pulse 1.5s infinite;
         }
 
         @keyframes pulse {
-            0% { opacity: 0.6; }
+            0% { opacity: 0.5; }
             50% { opacity: 1; }
-            100% { opacity: 0.6; }
+            100% { opacity: 0.5; }
         }
 
         .fade-out {
@@ -265,7 +273,7 @@
 
         .rsvp-btn {
             display: block;
-            background-color: var(--primary-gold);
+            background-color: #8c7355;
             color: var(--white);
             text-decoration: none;
             padding: 14px;
@@ -273,12 +281,12 @@
             font-weight: 500;
             letter-spacing: 1px;
             margin-top: 20px;
-            box-shadow: 0 4px 10px rgba(197, 160, 89, 0.3);
+            box-shadow: 0 4px 10px rgba(140, 115, 85, 0.3);
             transition: background 0.3s;
         }
 
         .rsvp-btn:hover {
-            background-color: #b08c45;
+            background-color: #6e593f;
         }
 
         footer {
@@ -295,15 +303,14 @@
 
     <div class="phone-container">
 
-        <!-- ÉCRAN ENVELOPPE STYLE ROYAL (Inspiré de votre capture) -->
+        <!-- ÉCRAN ENVELOPPE STYLE DENTELLE & SCEAU BRONZE -->
         <div id="envelope-screen" onclick="openInvitation()">
-            <div class="envelope-card-wrapper">
-                <div class="envelope-flap"></div>
-                <div class="bee-decor">🐝 ❀ 🐝</div>
-                <div class="wax-seal">A & F</div>
-                <div class="envelope-title">Society News</div>
-                <div class="envelope-names">Arthur & Fahasoavana</div>
-                <div class="tap-to-open">Touchez pour ouvrir</div>
+            <div class="envelope-card">
+                <div class="envelope-top-text">YOU'VE GOT MAIL FROM</div>
+                <div class="envelope-names">Arthur &<br>Fahasoavana</div>
+                <div class="envelope-lace-flap"></div>
+                <div class="wax-seal-oval">A & F</div>
+                <div class="click-to-open">CLICK TO OPEN ...</div>
             </div>
         </div>
 
