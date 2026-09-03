@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Arthur & Fahasoavana - Invitation de Mariage</title>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
@@ -14,6 +14,10 @@
             --border-gold: #e2d3b3;
         }
 
+        * {
+            box-sizing: border-box;
+        }
+
         body {
             margin: 0;
             padding: 0;
@@ -23,97 +27,101 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 100vh;
-            overflow-x: hidden;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
         }
 
+        /* Conteneur plein écran mobile parfait */
         .phone-container {
-            width: 100%;
-            max-width: 430px;
+            width: 100vw;
+            height: 100vh;
+            max-width: 480px;
+            max-height: 100vh;
             background-color: var(--bg-color);
-            min-height: 100vh;
-            box-shadow: 0 0 30px rgba(0,0,0,0.5);
             position: relative;
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
         }
 
-        @media (min-width: 431px) {
+        @media (min-width: 481px) {
             .phone-container {
-                height: 880px;
-                border-radius: 40px;
-                border: 10px solid #333;
-                overflow-y: auto;
+                height: 90vh;
+                border-radius: 30px;
+                border: 8px solid #333;
+                box-shadow: 0 10px 40px rgba(0,0,0,0.6);
             }
         }
 
-        /* --- ÉCRAN ENVELOPPE STYLE DENTELLE & SCEAU BRONZE --- */
+        /* --- ÉCRAN ENVELOPPE PLEIN ÉCRAN SMARTPHONE --- */
         #envelope-screen {
-            position: absolute;
+            position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
             background-color: #f4efe6;
-            background-image: radial-gradient(circle, #f9f6f0 0%, #ede6dc 100%);
+            background-image: radial-gradient(circle, #fcf9f5 0%, #ebe3d5 100%);
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            z-index: 10;
-            transition: transform 1s ease-in-out, opacity 0.8s ease-in-out;
+            z-index: 100;
+            transition: transform 0.9s cubic-bezier(0.77, 0, 0.175, 1), opacity 0.7s ease-in-out;
             cursor: pointer;
             text-align: center;
             padding: 20px;
-            box-sizing: border-box;
         }
 
         .envelope-card {
             position: relative;
-            width: 340px;
-            height: 480px;
+            width: 100%;
+            height: 100%;
+            max-width: 450px;
+            max-height: 850px;
             background: #fbf9f5;
             border: 1px solid #e3d8c8;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.08);
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding-top: 50px;
+            justify-content: center;
+            padding: 30px 20px;
         }
 
         .envelope-top-text {
             font-family: 'Montserrat', sans-serif;
             font-size: 0.85rem;
-            letter-spacing: 3px;
+            letter-spacing: 4px;
             text-transform: uppercase;
             color: #776b5d;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
         }
 
         .envelope-names {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 2.2rem;
+            font-size: 2.5rem;
             font-style: italic;
             color: #4a4033;
-            line-height: 1.2;
-            margin-bottom: 20px;
+            line-height: 1.15;
+            margin-bottom: 30px;
         }
 
-        /* Rabat de l'enveloppe orné de dentelle blanche */
+        /* Rabat de l'enveloppe orné de dentelle blanche adapté en largeur d'écran */
         .envelope-lace-flap {
             position: absolute;
-            top: 130px;
-            left: -10px;
-            width: 360px;
-            height: 110px;
-            background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(245,240,232,0.95) 100%);
+            top: 38%;
+            left: 0;
+            width: 100%;
+            height: 140px;
+            background: linear-gradient(135deg, rgba(255,255,255,0.98) 0%, rgba(245,240,232,0.98) 100%);
             clip-path: polygon(0 0, 50% 100%, 100% 0);
-            border-bottom: 3px solid #fff;
-            box-shadow: 0 10px 15px rgba(0,0,0,0.05);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.04);
             display: flex;
             justify-content: center;
             align-items: flex-end;
+            z-index: 2;
         }
 
-        /* Effet visuel de dentelle sur les bords du rabat */
         .envelope-lace-flap::after {
             content: "";
             position: absolute;
@@ -121,17 +129,17 @@
             left: 0;
             width: 100%;
             height: 25px;
-            background-image: radial-gradient(circle, transparent 60%, #fff 62%);
-            background-size: 12px 12px;
-            opacity: 0.9;
+            background-image: radial-gradient(circle, transparent 58%, #fff 60%);
+            background-size: 14px 14px;
+            opacity: 0.95;
         }
 
         /* Sceau de cire ovale couleur bronze/taupe */
         .wax-seal-oval {
             position: absolute;
-            top: 210px;
-            width: 85px;
-            height: 105px;
+            top: calc(38% + 80px);
+            width: 95px;
+            height: 115px;
             background: radial-gradient(circle, #7a6b5d 0%, #5e5144 70%, #3d342b 100%);
             border-radius: 50% / 45%;
             display: flex;
@@ -139,29 +147,31 @@
             align-items: center;
             color: #d4c5a9;
             font-family: 'Cormorant Garamond', serif;
-            font-size: 1.6rem;
+            font-size: 1.7rem;
             font-style: italic;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.3), inset 0 2px 4px rgba(255,255,255,0.2);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.35), inset 0 2px 5px rgba(255,255,255,0.2);
             border: 2px solid #8c7d6b;
-            z-index: 5;
+            z-index: 10;
             text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+            transform: translateX(-50%);
+            left: 50%;
         }
 
         .click-to-open {
             position: absolute;
-            bottom: 40px;
+            bottom: 50px;
             font-family: 'Montserrat', sans-serif;
             font-size: 0.75rem;
             text-transform: uppercase;
-            letter-spacing: 4px;
+            letter-spacing: 5px;
             color: #776b5d;
             animation: pulse 1.5s infinite;
         }
 
         @keyframes pulse {
-            0% { opacity: 0.5; }
+            0% { opacity: 0.4; }
             50% { opacity: 1; }
-            100% { opacity: 0.5; }
+            100% { opacity: 0.4; }
         }
 
         .fade-out {
@@ -207,7 +217,7 @@
         }
 
         .content-section {
-            padding: 40px 25px;
+            padding: 40px 20px;
             text-align: center;
         }
 
@@ -303,7 +313,7 @@
 
     <div class="phone-container">
 
-        <!-- ÉCRAN ENVELOPPE STYLE DENTELLE & SCEAU BRONZE -->
+        <!-- ÉCRAN ENVELOPPE PLEIN ÉCRAN -->
         <div id="envelope-screen" onclick="openInvitation()">
             <div class="envelope-card">
                 <div class="envelope-top-text">YOU'VE GOT MAIL FROM</div>
