@@ -59,721 +59,6 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: #d4cebe url('enveloppe.jpg') no-repeat center center/cover;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-            align-items: center;
-            z-index: 9999;
-            transition: transform 0.8s cubic-bezier(0.77, 0, 0.175, 1), opacity 0.6s ease-in-out;
-            cursor: pointer;
-            padding-bottom: 60px;
-        }
-
-        .click-to-open {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 5px;
-            color: #4a4033;
-            background: rgba(255, 255, 255, 0.95);
-            padding: 14px 28px;
-            border-radius: 30px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-            animation: pulse 1.5s infinite;
-            border: 1px solid #d4c5a9;
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(1); opacity: 0.8; }
-            50% { transform: scale(1.05); opacity: 1; }
-            100% { transform: scale(1); opacity: 0.8; }
-        }
-
-        .fade-out {
-            transform: translateY(-100%);
-            opacity: 0;
-            pointer-events: none;
-        }
-
-        /* --- PREMIÈRE PAGE DU SITE --- */
-        header {
-            height: 100vh;
-            background: linear-gradient(to bottom, rgba(0,0,0,0.25), rgba(0,0,0,0.8)), url('5a58078b-6ecd-4568-ad2f-5400f911b929.jpg') no-repeat center center/cover;
-            filter: grayscale(100%);
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            align-items: center;
-            text-align: center;
-            color: var(--white);
-            padding: 30px 20px;
-            position: relative;
-        }
-
-        header * {
-            filter: none;
-        }
-
-        /* Guirlandes lumineuses animées */
-        .fairy-lights {
-            display: flex;
-            justify-content: space-around;
-            width: 100%;
-            padding: 0 10px;
-        }
-
-        .light {
-            width: 10px;
-            height: 14px;
-            background-color: #fffacd;
-            border-radius: 50%;
-            box-shadow: 0 0 12px 4px #fffae6, 0 0 25px 8px #ffcc00;
-            animation: blink 1.8s infinite alternate;
-        }
-
-        .light:nth-child(2) { animation-delay: 0.3s; }
-        .light:nth-child(3) { animation-delay: 0.6s; }
-        .light:nth-child(4) { animation-delay: 0.9s; }
-        .light:nth-child(5) { animation-delay: 1.2s; }
-
-        @keyframes blink {
-            0% { opacity: 0.3; transform: scale(0.8); box-shadow: 0 0 4px 1px #fffae6; }
-            100% { opacity: 1; transform: scale(1.2); box-shadow: 0 0 16px 6px #ffcc00; }
-        }
-
-        .header-verse {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.25rem;
-            font-style: italic;
-            max-width: 360px;
-            line-height: 1.5;
-            color: #fceea7;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.8);
-            margin-top: 10px;
-        }
-
-        .header-center {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .we-do-title {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 4rem;
-            font-style: italic;
-            font-weight: 300;
-            color: #ffffff;
-            text-shadow: 0 0 15px rgba(255,255,255,0.8);
-            margin: 0;
-            line-height: 1;
-        }
-
-        .subtitle-family {
-            font-size: 0.75rem;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            color: #dcdcdc;
-            margin: 15px 0 5px 0;
-        }
-
-        /* Noms en brillance */
-        .couple-names {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 2.6rem;
-            letter-spacing: 2px;
-            color: #ffffff;
-            text-transform: uppercase;
-            margin-bottom: 5px;
-            text-shadow: 0 0 10px #ffffff, 0 0 20px #ffdf73, 0 0 30px #c5a059;
-            animation: shine 2.5s infinite alternate;
-        }
-
-        @keyframes shine {
-            0% { text-shadow: 0 0 8px #ffffff, 0 0 15px #ffdf73; }
-            100% { text-shadow: 0 0 15px #ffffff, 0 0 25px #fffae6, 0 0 35px #c5a059; }
-        }
-
-        .couple-names span {
-            font-style: italic;
-            text-transform: lowercase;
-            font-family: 'Cormorant Garamond', serif;
-            color: var(--primary-gold);
-            font-size: 2rem;
-            margin: 0 5px;
-        }
-
-        .invite-text {
-            font-size: 0.75rem;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            color: #cccccc;
-            margin-bottom: 15px;
-        }
-
-        .date-box {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-            max-width: 380px;
-            gap: 15px;
-            margin-bottom: 10px;
-        }
-
-        .date-line {
-            flex-grow: 1;
-            height: 1px;
-            background-color: rgba(255,255,255,0.7);
-        }
-
-        .date-center {
-            text-align: center;
-        }
-
-        .date-day {
-            font-size: 0.85rem;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            color: #ffdf73;
-            font-weight: 500;
-        }
-
-        .date-number {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 2.8rem;
-            color: #fff;
-            line-height: 1;
-            margin: 2px 0;
-            text-shadow: 0 0 10px rgba(255,255,255,0.6);
-        }
-
-        .date-year {
-            font-size: 1.1rem;
-            letter-spacing: 4px;
-            color: #fff;
-            font-weight: 600;
-        }
-
-        .content-section {
-            padding: 40px 15px;
-            text-align: center;
-        }
-
-        /* --- SECTION COMPTE À REBOURS (THE COUNTDOWN) --- */
-        .countdown-section {
-            padding: 40px 20px;
-            text-align: center;
-            background-color: #fbf9f5;
-        }
-
-        .countdown-sub {
-            font-family: 'Cormorant Garamond', serif;
-            font-style: italic;
-            font-size: 1.1rem;
-            color: #666;
-            margin-bottom: 15px;
-        }
-
-        .countdown-title {
-            font-family: 'Cormorant Garamond', serif;
-            font-style: italic;
-            font-size: 2.5rem;
-            color: #2c2c2c;
-            margin-bottom: 0px;
-            font-weight: 400;
-        }
-
-        .countdown-timer {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 6px;
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 2.2rem;
-            color: #2c2c2c;
-            margin: 20px 0;
-        }
-
-        .countdown-unit {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            min-width: 60px;
-        }
-
-        .countdown-label {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.6rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: #777;
-            margin-top: 2px;
-        }
-
-        .countdown-sep {
-            font-weight: 300;
-            color: #8c7355;
-            margin-top: -15px;
-        }
-
-        .countdown-message {
-            margin-top: 30px;
-        }
-
-        .countdown-msg-title {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 2rem;
-            font-style: italic;
-            color: #2c2c2c;
-            line-height: 1.2;
-            margin: 0;
-        }
-
-        /* --- STYLE TIMELINE PROGRAMME --- */
-        .prog-header {
-            margin-bottom: 30px;
-            margin-top: 20px;
-        }
-
-        .prog-sub {
-            font-family: 'Cormorant Garamond', serif;
-            font-style: italic;
-            font-size: 1.5rem;
-            color: #2c2c2c;
-            margin: 0;
-        }
-
-        .prog-title {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.4rem;
-            letter-spacing: 5px;
-            font-weight: 600;
-            color: #2c2c2c;
-            margin: 5px 0 0 0;
-        }
-
-        .timeline {
-            position: relative;
-            max-width: 400px;
-            margin: 0 auto;
-            padding: 20px 0;
-        }
-
-        .timeline::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 50%;
-            width: 2px;
-            background: #2c2c2c;
-            transform: translateX(-50%);
-        }
-
-        .timeline-item {
-            position: relative;
-            margin-bottom: 40px;
-            width: 100%;
-            display: flex;
-            align-items: center;
-        }
-
-        .timeline-dot {
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 12px;
-            height: 12px;
-            background: #2c2c2c;
-            border-radius: 50%;
-            z-index: 2;
-        }
-
-        .timeline-content {
-            width: 44%;
-            text-align: right;
-            padding-right: 15px;
-        }
-
-        .timeline-icon {
-            width: 44%;
-            text-align: left;
-            padding-left: 15px;
-            font-size: 1.5rem;
-        }
-
-        .timeline-item:nth-child(even) {
-            flex-direction: row-reverse;
-        }
-
-        .timeline-item:nth-child(even) .timeline-content {
-            text-align: left;
-            padding-left: 15px;
-            padding-right: 0;
-        }
-
-        .timeline-item:nth-child(even) .timeline-icon {
-            text-align: right;
-            padding-right: 15px;
-            padding-left: 0;
-        }
-
-        .t-time {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.2rem;
-            font-weight: 600;
-            letter-spacing: 1px;
-            color: #2c2c2c;
-        }
-
-        .t-name {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.8rem;
-            letter-spacing: 2px;
-            font-weight: 600;
-            text-transform: uppercase;
-            color: #2c2c2c;
-            margin: 4px 0;
-        }
-
-        .t-address {
-            font-size: 0.65rem;
-            color: #666;
-            text-transform: uppercase;
-            line-height: 1.3;
-            letter-spacing: 1px;
-        }
-
-        .card {
-            background: var(--white);
-            border-radius: 12px;
-            padding: 20px;
-            margin-bottom: 20px;
-            box-shadow: 0 4px 15px rgba(197, 160, 89, 0.08);
-            border: 1px solid var(--border-gold);
-            text-align: left;
-        }
-
-        .card h3 {
-            font-family: 'Cormorant Garamond', serif;
-            color: var(--primary-gold);
-            margin-top: 0;
-            font-size: 1.3rem;
-            border-bottom: 1px dashed var(--border-gold);
-            padding-bottom: 8px;
-        }
-
-        ul {
-            padding-left: 15px;
-            margin: 10px 0 0 0;
-            font-size: 0.9rem;
-            color: #444;
-        }
-
-        li {
-            margin-bottom: 8px;
-        }
-
-        .rsvp-btn {
-            display: block;
-            background-color: #8c7355;
-            color: var(--white);
-            text-decoration: none;
-            padding: 14px;
-            border-radius: 30px;
-            font-weight: 500;
-            letter-spacing: 1px;
-            margin-top: 20px;
-            box-shadow: 0 4px 10px rgba(140, 115, 85, 0.3);
-            transition: background 0.3s;
-            text-align: center;
-        }
-
-        .rsvp-btn:hover {
-            background-color: #6e593f;
-        }
-
-        h2.section-title {
-            font-family: 'Cormorant Garamond', serif;
-            color: var(--primary-gold);
-            font-size: 1.8rem;
-            margin-bottom: 25px;
-            font-weight: 600;
-            letter-spacing: 1px;
-            border-bottom: 1px solid var(--border-gold);
-            display: inline-block;
-            padding-bottom: 5px;
-        }
-
-        footer {
-            text-align: center;
-            padding: 30px;
-            font-size: 0.8rem;
-            color: #888;
-            font-family: 'Cormorant Garamond', serif;
-            letter-spacing: 2px;
-        }
-    </style>
-</head>
-<body>
-
-    <div class="phone-container">
-
-        <!-- ÉCRAN ENVELOPPE -->
-        <div id="envelope-screen" onclick="openInvitation()">
-            <div class="click-to-open">CLIQUER POUR OUVRIR</div>
-        </div>
-
-        <!-- PREMIÈRE PAGE DU SITE -->
-        <header>
-            <div class="fairy-lights">
-                <div class="light"></div>
-                <div class="light"></div>
-                <div class="light"></div>
-                <div class="light"></div>
-                <div class="light"></div>
-            </div>
-
-            <div class="header-verse">
-                "Maintenant, trois choses sont toujours là: la foi, l'espérance et l'amour. Mais la plus grande des trois, c'est l'amour."<br>
-                <strong style="font-size: 0.95rem; color: #fff; display: block; margin-top: 4px;">— I Cor. 13:13</strong>
-            </div>
-
-            <div class="header-center">
-                <div class="we-do-title">Nous Disons Oui</div>
-                <div class="subtitle-family">Unis avec leurs familles</div>
-                <div class="couple-names">Arthur <span>et</span> Fahasoavana</div>
-                <div class="invite-text">Ont la joie de vous inviter à leur mariage</div>
-            </div>
-
-            <div class="date-box">
-                <div class="date-line"></div>
-                <div class="date-center">
-                    <div class="date-day">Samedi</div>
-                    <div class="date-number">15</div>
-                    <div class="date-year">2027</div>
-                </div>
-                <div class="date-line"></div>
-            </div>
-        </header>
-
-        <div class="content-section">
-
-            <!-- SECTION COMPTE À REBOURS -->
-            <div class="countdown-section">
-                <div class="countdown-title">The countdown</div>
-                <div class="countdown-sub">to forever has begun...</div>
-                
-                <div class="countdown-timer">
-                    <div class="countdown-unit">
-                        <span id="days">000</span>
-                        <span class="countdown-label">Jours</span>
-                    </div>
-                    <span class="countdown-sep">:</span>
-                    <div class="countdown-unit">
-                        <span id="hours">00</span>
-                        <span class="countdown-label">Heures</span>
-                    </div>
-                    <span class="countdown-sep">:</span>
-                    <div class="countdown-unit">
-                        <span id="minutes">00</span>
-                        <span class="countdown-label">Minutes</span>
-                    </div>
-                    <span class="countdown-sep">:</span>
-                    <div class="countdown-unit">
-                        <span id="seconds">00</span>
-                        <span class="countdown-label">Secondes</span>
-                    </div>
-                </div>
-
-                <div class="countdown-message">
-                    <div style="font-size: 2rem; margin-bottom: 5px;">💍</div>
-                    <h3 class="countdown-msg-title">We can't wait<br>to celebrate</h3>
-                </div>
-            </div>
-
-            <!-- PROGRAMME STYLE TIMELINE -->
-            <div class="prog-header">
-                <div class="prog-sub">Le</div>
-                <div class="prog-title">PROGRAMME</div>
-            </div>
-
-            <div class="timeline">
-                
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <div class="t-time">13h30</div>
-                        <div class="t-name">Cérémonie Civile</div>
-                        <div class="t-address">Mairie de Perret<br>15 Rue Kreiz Ker, 22570 Perret</div>
-                    </div>
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-icon">💍</div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <div class="t-time">14h30</div>
-                        <div class="t-name">Cérémonie Religieuse</div>
-                        <div class="t-address">Église St Nicodème<br>2 Rte de la croix rouge, 22570 Perret</div>
-                    </div>
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-icon">⛪</div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <div class="t-time">17h30</div>
-                        <div class="t-name">Réception</div>
-                        <div class="t-address">Domaine Un Jour Parfait<br>Lanhellen Vihan, 22110 Rostrenen</div>
-                    </div>
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-icon">🥂</div>
-                </div>
-
-            </div>
-
-            <!-- Hébergement -->
-            <h2 class="section-title" style="margin-top: 40px;">Hébergement</h2>
-            <div class="card" style="font-size: 0.9rem; color: #555;">
-                <p style="margin-top:0;">Pour séjourner sur le domaine (nombre de couchages limité, merci de contacter les mariés) :</p>
-                <ul>
-                    <li><strong>33 couchages aménageables</strong> (15€ à 25€/pers. - prévoir draps et serviettes)</li>
-                    <li><strong>Emplacements Camping-Car</strong> disponibles</li>
-                    <li><strong>Tentes en extérieur</strong> (prévoir votre tente)</li>
-                </ul>
-            </div>
-
-            <!-- Code Vestimentaire -->
-            <h2 class="section-title" style="margin-top: 30px;">Code Vestimentaire</h2>
-            <div class="card" style="font-size: 0.9rem; color: #555; text-align: center;">
-                <p style="margin: 0;">Pour la cérémonie, nous vous invitons à privilégier une <strong>tenue élégante</strong>. N'hésitez pas à l'accessoiriser pour y apporter une touche raffinée et personnelle.</p>
-            </div>
-
-            <!-- Menu -->
-            <h2 class="section-title" style="margin-top: 30px;">Menu de la Réception</h2>
-            
-            <div class="card">
-                <h3>Entrées</h3>
-                <ul>
-                    <li>Tartare de saumon, courgettes et tomates confites, crème basilic citronnée</li>
-                    <li>Foie Gras de canard français et ses toasts (pain muesli/brioché), confitures de framboise, balsamique et fleur de sel</li>
-                </ul>
-
-                <h3 style="margin-top: 20px;">Plats</h3>
-                <ul>
-                    <li>Pintadeau farci, gratin normand, pressé de courgette, sauce au cidre, lissé de patate douce et tomates rôties</li>
-                    <li>Magret de canard, blinis de pommes de terre, lissé de patate douce sur carottes glacées et carottine braisée, jus corsé</li>
-                </ul>
-
-                <h3 style="margin-top: 20px;">Fromages</h3>
-                <ul>
-                    <li>Fromages affinés ou producteurs locaux, mesclun de salade, noix, raisins et framboise</li>
-                </ul>
-
-                <h3 style="margin-top: 20px;">Dessert</h3>
-                <ul>
-                    <li>Wedding Cake & brochette de fruits de saison, coulis de fruits rouges</li>
-                </ul>
-            </div>
-
-            <!-- RSVP -->
-            <h2 class="section-title" style="margin-top: 30px;">RSVP</h2>
-            <div class="card" style="text-align: center;">
-                <p style="margin: 0 0 15px 0; font-size: 0.9rem;">Merci de confirmer votre présence :</p>
-                <a href="tel:+3345706021" class="rsvp-btn">📞 Arthur : +33 4 57 06 02 1</a>
-                <a href="tel:+33601105448" class="rsvp-btn" style="background-color: #333; margin-top: 10px;">📞 Fahasoavana : +33 6 01 10 54 48</a>
-            </div>
-
-            <footer>
-                ARTHUR & FAHASOAVANA — 2027
-            </footer>
-
-        </div>
-    </div>
-
-    <script>
-        function openInvitation() {
-            const envelope = document.getElementById('envelope-screen');
-            if (envelope) {
-                envelope.classList.add('fade-out');
-            }
-        }
-
-        // Script dynamique du compte à rebours
-        const weddingDate = new Date('May 15, 2027 13:30:00').getTime();
-
-        function updateCountdown() {
-            const now = new Date().getTime();
-            const distance = weddingDate - now;
-
-            if (distance > 0) {
-                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((distance % (1000```html
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Arthur & Fahasoavana - Invitation de Mariage</title>
-    <link href="[https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500&display=swap](https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500&display=swap)" rel="stylesheet">
-    <style>
-        :root {
-            --bg-color: #fbf9f5;
-            --primary-gold: #c5a059;
-            --dark-text: #2c2c2c;
-            --white: #ffffff;
-            --border-gold: #e2d3b3;
-        }
-
-        * {
-            box-sizing: border-box;
-        }
-
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: #1a1a1a;
-            color: var(--dark-text);
-            font-family: 'Montserrat', sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 100vw;
-            height: 100vh;
-            overflow: hidden;
-        }
-
-        .phone-container {
-            width: 100vw;
-            height: 100vh;
-            max-width: 480px;
-            max-height: 100vh;
-            background-color: var(--bg-color);
-            position: relative;
-            overflow-y: auto;
-            -webkit-overflow-scrolling: touch;
-        }
-
-        @media (min-width: 481px) {
-            .phone-container {
-                height: 90vh;
-                border-radius: 30px;
-                border: 8px solid #333;
-                box-shadow: 0 10px 40px rgba(0,0,0,0.6);
-            }
-        }
-
-        /* --- ÉCRAN ENVELOPPE --- */
-        #envelope-screen {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
             background: url('enveloppe.jpg') no-repeat center center/cover;
             display: flex;
             flex-direction: column;
@@ -842,4 +127,349 @@
             height: 14px;
             background-color: #fffacd;
             border-radius: 50%;
-            box
+            box-shadow: 0 0 12px 4px #fffae6, 0 0 25px 8px #ffcc00;
+            animation: blink 1.8s infinite alternate;
+        }
+
+        .light:nth-child(2) { animation-delay: 0.3s; }
+        .light:nth-child(3) { animation-delay: 0.6s; }
+        .light:nth-child(4) { animation-delay: 0.9s; }
+        .light:nth-child(5) { animation-delay: 1.2s; }
+
+        @keyframes blink {
+            0% { opacity: 0.3; transform: scale(0.8); box-shadow: 0 0 4px 1px #fffae6; }
+            100% { opacity: 1; transform: scale(1.2); box-shadow: 0 0 16px 6px #ffcc00; }
+        }
+
+        .header-verse {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.25rem; /* Agrandit le verset */
+            font-style: italic;
+            max-width: 360px;
+            line-height: 1.5;
+            color: #fceea7;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+            margin-top: 10px;
+        }
+
+        .header-center {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .we-do-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 4rem;
+            font-style: italic;
+            font-weight: 300;
+            color: #ffffff;
+            text-shadow: 0 0 15px rgba(255,255,255,0.8);
+            margin: 0;
+            line-height: 1;
+        }
+
+        .subtitle-family {
+            font-size: 0.75rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #dcdcdc;
+            margin: 15px 0 5px 0;
+        }
+
+        /* Noms en brillance intense et élégante */
+        .couple-names {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.6rem;
+            letter-spacing: 2px;
+            color: #ffffff;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+            text-shadow: 0 0 10px #ffffff, 0 0 20px #ffdf73, 0 0 30px #c5a059;
+            animation: shine 2.5s infinite alternate;
+        }
+
+        @keyframes shine {
+            0% { text-shadow: 0 0 8px #ffffff, 0 0 15px #ffdf73; }
+            100% { text-shadow: 0 0 15px #ffffff, 0 0 25px #fffae6, 0 0 35px #c5a059; }
+        }
+
+        .couple-names span {
+            font-style: italic;
+            text-transform: lowercase;
+            font-family: 'Cormorant Garamond', serif;
+            color: var(--primary-gold);
+            font-size: 2rem;
+            margin: 0 5px;
+        }
+
+        .invite-text {
+            font-size: 0.75rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #cccccc;
+            margin-bottom: 15px;
+        }
+
+        /* Date plus grande et mise en valeur */
+        .date-box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            max-width: 380px;
+            gap: 15px;
+            margin-bottom: 10px;
+        }
+
+        .date-line {
+            flex-grow: 1;
+            height: 1px;
+            background-color: rgba(255,255,255,0.7);
+        }
+
+        .date-center {
+            text-align: center;
+        }
+
+        .date-day {
+            font-size: 0.85rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #ffdf73;
+            font-weight: 500;
+        }
+
+        .date-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.8rem; /* Agrandit la date */
+            color: #fff;
+            line-height: 1;
+            margin: 2px 0;
+            text-shadow: 0 0 10px rgba(255,255,255,0.6);
+        }
+
+        .date-year {
+            font-size: 1.1rem; /* Agrandit l'année */
+            letter-spacing: 4px;
+            color: #fff;
+            font-weight: 600;
+        }
+
+        .content-section {
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        h2.section-title {
+            font-family: 'Cormorant Garamond', serif;
+            color: var(--primary-gold);
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            border-bottom: 1px solid var(--border-gold);
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        .card {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 15px rgba(197, 160, 89, 0.08);
+            border: 1px solid var(--border-gold);
+            text-align: left;
+        }
+
+        .card h3 {
+            font-family: 'Cormorant Garamond', serif;
+            color: var(--primary-gold);
+            margin-top: 0;
+            font-size: 1.3rem;
+            border-bottom: 1px dashed var(--border-gold);
+            padding-bottom: 8px;
+        }
+
+        .time {
+            font-weight: 600;
+            color: var(--primary-gold);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        ul {
+            padding-left: 15px;
+            margin: 10px 0 0 0;
+            font-size: 0.9rem;
+            color: #444;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        .rsvp-btn {
+            display: block;
+            background-color: #8c7355;
+            color: var(--white);
+            text-decoration: none;
+            padding: 14px;
+            border-radius: 30px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            margin-top: 20px;
+            box-shadow: 0 4px 10px rgba(140, 115, 85, 0.3);
+            transition: background 0.3s;
+        }
+
+        .rsvp-btn:hover {
+            background-color: #6e593f;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            font-size: 0.8rem;
+            color: #888;
+            font-family: 'Cormorant Garamond', serif;
+            letter-spacing: 2px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="phone-container">
+
+        <!-- ÉCRAN ENVELOPPE -->
+        <div id="envelope-screen" onclick="openInvitation()">
+            <div class="click-to-open">CLIQUER POUR OUVRIR</div>
+        </div>
+
+        <!-- PREMIÈRE PAGE DU SITE -->
+        <header>
+            <!-- Guirlandes lumineuses animées -->
+            <div class="fairy-lights">
+                <div class="light"></div>
+                <div class="light"></div>
+                <div class="light"></div>
+                <div class="light"></div>
+                <div class="light"></div>
+            </div>
+
+            <!-- Verset biblique plus grand en haut -->
+            <div class="header-verse">
+                "Maintenant, trois choses sont toujours là: la foi, l'espérance et l'amour. Mais la plus grande des trois, c'est l'amour."<br>
+                <strong style="font-size: 0.95rem; color: #fff; display: block; margin-top: 4px;">— I Cor. 13:13</strong>
+            </div>
+
+            <div class="header-center">
+                <div class="we-do-title">Nous Disons Oui</div>
+                <div class="subtitle-family">Unis avec leurs familles</div>
+                <!-- Noms en brillance -->
+                <div class="couple-names">Arthur <span>et</span> Fahasoavana</div>
+                <div class="invite-text">Ont la joie de vous inviter à leur mariage</div>
+            </div>
+
+            <!-- Date plus grande -->
+            <div class="date-box">
+                <div class="date-line"></div>
+                <div class="date-center">
+                    <div class="date-day">Samedi</div>
+                    <div class="date-number">15</div>
+                    <div class="date-year">2027</div>
+                </div>
+                <div class="date-line"></div>
+            </div>
+        </header>
+
+        <div class="content-section">
+
+            <!-- Programme -->
+            <h2 class="section-title">Programme</h2>
+
+            <div class="card">
+                <span class="time">13h30 — Cérémonie Civile</span>
+                <p style="margin: 8px 0 0 0; font-size: 0.9rem; color: #555;">Mairie de Perret<br><small>15 Rue Kreiz Ker, 22570 Perret</small></p>
+            </div>
+
+            <div class="card">
+                <span class="time">14h30 — Cérémonie Religieuse</span>
+                <p style="margin: 8px 0 0 0; font-size: 0.9rem; color: #555;">Église St Nicodème<br><small>2 Rte de la croix rouge, 22570 Perret</small></p>
+            </div>
+
+            <div class="card">
+                <span class="time">17h30 — Réception & Festivités</span>
+                <p style="margin: 8px 0 0 0; font-size: 0.9rem; color: #555;">Domaine Un Jour Parfait<br><small>Lanhellen Vihan, 22110 Rostrenen</small></p>
+            </div>
+
+            <!-- Hébergement -->
+            <h2 class="section-title" style="margin-top: 30px;">Hébergement</h2>
+            <div class="card" style="font-size: 0.9rem; color: #555;">
+                <p style="margin-top:0;">Pour séjourner sur le domaine (nombre de couchages limité, merci de contacter les mariés) :</p>
+                <ul>
+                    <li><strong>33 couchages aménageables</strong> (15€ à 25€/pers. - prévoir draps et serviettes)</li>
+                    <li><strong>Emplacements Camping-Car</strong> disponibles</li>
+                    <li><strong>Tentes en extérieur</strong> (prévoir votre tente)</li>
+                </ul>
+            </div>
+
+            <!-- Code Vestimentaire -->
+            <h2 class="section-title" style="margin-top: 30px;">Code Vestimentaire</h2>
+            <div class="card" style="font-size: 0.9rem; color: #555; text-align: center;">
+                <p style="margin: 0;">Pour la cérémonie, nous vous invitons à privilégier une <strong>tenue élégante</strong>. N'hésitez pas à l'accessoiriser pour y apporter une touche raffinée et personnelle.</p>
+            </div>
+
+            <!-- Menu -->
+            <h2 class="section-title" style="margin-top: 30px;">Menu de la Réception</h2>
+            
+            <div class="card">
+                <h3>Entrées</h3>
+                <ul>
+                    <li>Tartare de saumon, courgettes et tomates confites, crème basilic citronnée</li>
+                    <li>Foie Gras de canard français et ses toasts (pain muesli/brioché), confitures de framboise, balsamique et fleur de sel</li>
+                </ul>
+
+                <h3 style="margin-top: 20px;">Plats</h3>
+                <ul>
+                    <li>Pintadeau farci, gratin normand, pressé de courgette, sauce au cidre, lissé de patate douce et tomates rôties</li>
+                    <li>Magret de canard, blinis de pommes de terre, lissé de patate douce sur carottes glacées et carottine braisée, jus corsé</li>
+                </ul>
+
+                <h3 style="margin-top: 20px;">Fromages</h3>
+                <ul>
+                    <li>Fromages affinés ou producteurs locaux, mesclun de salade, noix, raisins et framboise</li>
+                </ul>
+
+                <h3 style="margin-top: 20px;">Dessert</h3>
+                <ul>
+                    <li>Wedding Cake & brochette de fruits de saison, coulis de fruits rouges</li>
+                </ul>
+            </div>
+
+            <!-- RSVP -->
+            <h2 class="section-title" style="margin-top: 30px;">RSVP</h2>
+            <div class="card" style="text-align: center;">
+                <p style="margin: 0 0 15px 0; font-size: 0.9rem;">Merci de confirmer votre présence :</p>
+                <a href="tel:+3345706021" class="rsvp-btn">📞 Arthur : +33 4 57 06 02 1</a>
+                <a href="tel:+33601105448" class="rsvp-btn" style="background-color: #333; margin-top: 10px;">📞 Fahasoavana : +33 6 01 10 54 48</a>
+            </div>
+
+            <footer>
+                ARTHUR & FAHASOAVANA — 2027
+            </footer>
+
+        </div>
+    </div>
+
+    <script>
+        function openInvitation() {
+            const envelope = document.getElementById('envelope-screen');
+            envelope.classList.add('fade-out');
+        }
+    </script>
+
+</body>
+</html>
