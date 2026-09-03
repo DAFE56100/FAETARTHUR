@@ -95,12 +95,11 @@
             pointer-events: none;
         }
 
-        /* --- PREMIÈRE PAGE (PHOTO N&B + CONTOUR DORÉ + VERSET EN EN-TÊTE) --- */
+        /* --- PREMIÈRE PAGE (PHOTO N&B + CADRE DENTELLE + PRÉNOMS DORÉS) --- */
         header {
             height: 100vh;
-            /* Photo en noir et blanc avec filtre sombre par-dessus */
             background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.75)), url('5a58078b-6ecd-4568-ad2f-5400f911b929.jpg') no-repeat center center/cover;
-            filter: grayscale(100%); /* Force l'image en noir et blanc */
+            filter: grayscale(100%);
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -111,24 +110,32 @@
             position: relative;
         }
 
-        /* Annulation du filtre N&B pour le texte afin qu'il reste net et éclatant */
         header * {
             filter: none;
         }
 
-        /* Élégant contour double doré digne d'une invitation de mariage */
-        .wedding-frame {
+        /* Cadre effet dentelle raffinée inspiré de l'enveloppe */
+        .lace-frame {
             position: absolute;
             top: 15px;
             left: 15px;
             right: 15px;
             bottom: 15px;
-            border: 1px solid rgba(212, 175, 55, 0.6);
-            outline: 1px solid rgba(212, 175, 55, 0.3);
-            outline-offset: 4px;
+            border: 3px double rgba(226, 211, 179, 0.85);
             pointer-events: none;
             z-index: 2;
+            box-shadow: inset 0 0 0 5px rgba(255, 255, 255, 0.08);
         }
+
+        /* Motifs de dentelle aux coins du cadre */
+        .lace-frame::before, .lace-frame::after {
+            content: "❀";
+            position: absolute;
+            color: #e2d3b3;
+            font-size: 1.2rem;
+        }
+        .lace-frame::before { top: 8px; left: 8px; }
+        .lace-frame::after { bottom: 8px; right: 8px; }
 
         .header-verse {
             font-family: 'Cormorant Garamond', serif;
@@ -151,14 +158,17 @@
             margin: 10px 0;
             font-weight: 400;
             letter-spacing: 1px;
+            color: #e2d3b3; /* Couleur dorée élégante pour les prénoms */
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
         }
 
         header h3 {
             font-size: 0.85rem;
             letter-spacing: 4px;
             text-transform: uppercase;
-            color: #e0d5c1;
+            color: #ffffff;
             margin-bottom: 0;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.5);
         }
 
         .header-footer-date {
@@ -168,6 +178,7 @@
             color: #f0f0f0;
             z-index: 3;
             margin-bottom: 10px;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.5);
         }
 
         .content-section {
@@ -262,17 +273,17 @@
             <div class="click-to-open">CLIQUER POUR OUVRIR</div>
         </div>
 
-        <!-- PREMIÈRE PAGE (VERSET EN EN-TÊTE + PHOTO N&B + CADRE DORÉ) -->
+        <!-- PREMIÈRE PAGE (VERSET + CADRE DENTELLE + PRÉNOMS DORÉS) -->
         <header>
-            <div class="wedding-frame"></div>
+            <div class="lace-frame"></div>
             
-            <!-- Verset biblique en tout premier en haut -->
+            <!-- Verset biblique en haut -->
             <div class="header-verse">
                 "Maintenant, trois choses sont toujours là: la foi, l'espérance et l'amour. Mais la plus grande des trois, c'est l'amour."<br>
-                <strong style="font-size: 0.8rem; color: #d4af37; display: block; margin-top: 4px;">I Cor. 13:13</strong>
+                <strong style="font-size: 0.8rem; color: #e2d3b3; display: block; margin-top: 4px;">I Cor. 13:13</strong>
             </div>
 
-            <!-- Noms au centre -->
+            <!-- Noms au centre en doré -->
             <div class="header-center">
                 <h3>Nous nous unissons</h3>
                 <h1>Arthur & Fahasoavana</h1>
