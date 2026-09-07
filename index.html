@@ -437,111 +437,132 @@
             animation: pulse 2s infinite;
         }
     
-        /* --- STYLE LIEU DE RÉCEPTION --- */
+        
+        /* --- STYLE LIEU DE RÉCEPTION (HARMONISÉ AVEC LE THÈME) --- */
         .reception-card {
+            background: linear-gradient(to bottom, #ffffff, #f7f5ef);
+            border: 1px solid var(--border-gold);
+            border-radius: 16px;
+            padding: 25px 20px;
             text-align: center;
+            box-shadow: 0 8px 25px rgba(115, 130, 118, 0.12);
+            position: relative;
+            overflow: hidden;
         }
 
         .reception-script {
             font-family: 'Cormorant Garamond', serif;
             font-style: italic;
-            font-size: 2.2rem;
+            font-size: 2.5rem;
             color: var(--primary-gold);
-            line-height: 0.8;
-            margin-bottom: -2px;
+            line-height: 0.7;
+            margin-bottom: 0px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
 
         .reception-main-title {
             font-family: 'Montserrat', sans-serif;
             font-size: 1.1rem;
             font-weight: 500;
-            letter-spacing: 3px;
+            letter-spacing: 4px;
             text-transform: uppercase;
-            color: var(--dark-text);
-            margin-bottom: 5px;
+            color: var(--accent-green);
+            margin-bottom: 8px;
         }
 
         .reception-venue-name {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             font-weight: 600;
-            color: var(--primary-gold);
-            margin-bottom: 2px;
+            color: var(--dark-text);
+            margin-bottom: 4px;
         }
 
         .reception-venue-subtitle {
+            font-family: 'Montserrat', sans-serif;
             font-size: 0.8rem;
-            color: #666;
-            letter-spacing: 1px;
-            margin-bottom: 15px;
+            color: var(--accent-green);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            font-weight: 500;
         }
 
         .reception-img-container {
             width: 100%;
-            border-radius: 10px;
+            border-radius: 12px;
             overflow: hidden;
-            margin-bottom: 15px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+            border: 2px solid var(--border-gold);
         }
 
         .reception-img {
             width: 100%;
             height: auto;
             display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .reception-img:hover {
+            transform: scale(1.02);
         }
 
         .maps-btn {
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 8px;
+            gap: 10px;
             background-color: var(--accent-green);
             color: var(--white);
             text-decoration: none;
-            padding: 12px 20px;
-            border-radius: 25px;
+            padding: 14px 24px;
+            border-radius: 30px;
             font-weight: 500;
             font-size: 0.85rem;
             letter-spacing: 2px;
-            margin: 0 auto 20px auto;
+            margin: 0 auto 25px auto;
             max-width: 280px;
-            box-shadow: 0 4px 10px rgba(115, 130, 118, 0.3);
-            transition: background 0.3s;
+            box-shadow: 0 4px 15px rgba(115, 130, 118, 0.35);
+            transition: background 0.3s, transform 0.2s;
         }
 
         .maps-btn:hover {
             background-color: #5c6a5f;
+            transform: translateY(-2px);
         }
 
         .accommodation-header {
-            margin-top: 25px;
-            margin-bottom: 10px;
+            margin-top: 30px;
+            margin-bottom: 12px;
             border-top: 1px dashed var(--border-gold);
-            padding-top: 15px;
+            padding-top: 20px;
         }
 
         .acc-script {
             font-family: 'Cormorant Garamond', serif;
             font-style: italic;
-            font-size: 1.4rem;
+            font-size: 1.5rem;
             color: var(--primary-gold);
             display: block;
+            line-height: 1;
         }
 
         .acc-title {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 1.3rem;
+            font-size: 1.5rem;
             font-weight: 600;
             color: var(--dark-text);
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
         }
 
         .acc-intro {
             font-size: 0.85rem;
             color: #555;
-            margin-bottom: 15px;
-            line-height: 1.4;
+            margin-bottom: 20px;
+            line-height: 1.5;
+            font-style: italic;
         }
 
         .acc-list {
@@ -552,22 +573,25 @@
 
         .acc-list li {
             font-size: 0.85rem;
-            color: #444;
+            color: #333;
             margin-bottom: 12px;
-            background: #fdfbf7;
-            padding: 10px;
-            border-radius: 8px;
+            background: #ffffff;
+            padding: 14px;
+            border-radius: 10px;
             border: 1px solid var(--border-gold);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
         }
 
         .acc-list small {
             color: #666;
             display: block;
-            margin-top: 4px;
+            margin-top: 6px;
             font-style: italic;
+            font-size: 0.78rem;
         }
 
     </style>
+
 </head>
 <body>
 
