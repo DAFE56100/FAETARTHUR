@@ -712,19 +712,23 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
             margin-bottom: 25px;
-            flex-wrap: wrap;
+            flex-wrap: nowrap;
+            width: 100%;
+            overflow-x: auto;
+            padding: 5px 0;
         }
 
         .accessory-img {
-            width: 55px;
-            height: 55px;
+            width: 48px;
+            height: 48px;
             object-fit: cover;
             border-radius: 50%;
             border: 1.5px solid var(--border-gold);
             background: #ffffff;
             box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+            flex-shrink: 0;
             transition: transform 0.3s ease;
         }
 
