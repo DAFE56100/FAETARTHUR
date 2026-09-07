@@ -436,6 +436,137 @@
             filter: drop-shadow(0 2px 5px rgba(0,0,0,0.5));
             animation: pulse 2s infinite;
         }
+    
+        /* --- STYLE LIEU DE RÉCEPTION --- */
+        .reception-card {
+            text-align: center;
+        }
+
+        .reception-script {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 2.2rem;
+            color: var(--primary-gold);
+            line-height: 0.8;
+            margin-bottom: -2px;
+        }
+
+        .reception-main-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 500;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--dark-text);
+            margin-bottom: 5px;
+        }
+
+        .reception-venue-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--primary-gold);
+            margin-bottom: 2px;
+        }
+
+        .reception-venue-subtitle {
+            font-size: 0.8rem;
+            color: #666;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+        }
+
+        .reception-img-container {
+            width: 100%;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .reception-img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .maps-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background-color: var(--accent-green);
+            color: var(--white);
+            text-decoration: none;
+            padding: 12px 20px;
+            border-radius: 25px;
+            font-weight: 500;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            margin: 0 auto 20px auto;
+            max-width: 280px;
+            box-shadow: 0 4px 10px rgba(115, 130, 118, 0.3);
+            transition: background 0.3s;
+        }
+
+        .maps-btn:hover {
+            background-color: #5c6a5f;
+        }
+
+        .accommodation-header {
+            margin-top: 25px;
+            margin-bottom: 10px;
+            border-top: 1px dashed var(--border-gold);
+            padding-top: 15px;
+        }
+
+        .acc-script {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 1.4rem;
+            color: var(--primary-gold);
+            display: block;
+        }
+
+        .acc-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--dark-text);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .acc-intro {
+            font-size: 0.85rem;
+            color: #555;
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+
+        .acc-list {
+            list-style: none;
+            padding: 0;
+            text-align: left;
+        }
+
+        .acc-list li {
+            font-size: 0.85rem;
+            color: #444;
+            margin-bottom: 12px;
+            background: #fdfbf7;
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid var(--border-gold);
+        }
+
+        .acc-list small {
+            color: #666;
+            display: block;
+            margin-top: 4px;
+            font-style: italic;
+        }
+
     </style>
 </head>
 <body>
@@ -540,16 +671,37 @@
                 <p style="margin: 8px 0 0 0; font-size: 0.9rem; color: #555;">Domaine Un Jour Parfait<br><small>Lanhellen Vihan, 22110 Rostrenen</small></p>
             </div>
 
-            <!-- Hébergement -->
-            <h2 class="section-title" style="margin-top: 30px;">Hébergement</h2>
-            <div class="card" style="font-size: 0.9rem; color: #555;">
-                <p style="margin-top:0;">Pour séjourner sur le domaine (nombre de couchages limité, merci de contacter les mariés) :</p>
-                <ul>
-                    <li><strong>33 couchages aménageables</strong> (15€ à 25€/pers. - prévoir draps et serviettes)</li>
-                    <li><strong>Emplacements Camping-Car</strong> disponibles</li>
-                    <li><strong>Tentes en extérieur</strong> (prévoir votre tente)</li>
+
+            <!-- LIEU DE RÉCEPTION -->
+            <h2 class="section-title">Lieu de Réception</h2>
+
+            <div class="card reception-card">
+                <div class="reception-script">le</div>
+                <div class="reception-main-title">LIEU DE RÉCEPTION</div>
+                <div class="reception-venue-name">Domaine Un Jour Parfait</div>
+                <div class="reception-venue-subtitle">Lanhellen Vihan, 22110 Rostrenen</div>
+
+                <div class="reception-img-container">
+                    <img src="image_abb0e4.jpg" alt="Domaine Un Jour Parfait" class="reception-img">
+                </div>
+
+                <a href="https://maps.google.com/?q=Lanhellen+Vihan,+22110+Rostrenen" target="_blank" class="maps-btn">
+                    📍 GOOGLE MAPS
+                </a>
+
+                <div class="accommodation-header">
+                    <span class="acc-script">Séjour au</span>
+                    <span class="acc-title">Domaine</span>
+                </div>
+                <p class="acc-intro">Pour les personnes souhaitant séjourner sur le domaine, nous vous invitons à contacter les futurs mariés, le nombre de couchages étant limité.</p>
+
+                <ul class="acc-list">
+                    <li>🛏️ <strong>33 couchages aménageables</strong> (15 € à 25 € / personnes)<br><small>*Prévoir drap/couette/housse de couette/housse d'oreiller et serviette.</small></li>
+                    <li>🚐 <strong>Emplacements Camping-Car</strong> disponibles</li>
+                    <li>⛺ <strong>Tentes en extérieur :</strong> merci de prévoir votre tente.</li>
                 </ul>
             </div>
+
 
             <!-- Code Vestimentaire -->
             <h2 class="section-title" style="margin-top: 30px;">Code Vestimentaire</h2>
