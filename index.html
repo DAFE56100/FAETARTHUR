@@ -9,6 +9,7 @@
         :root {
             --bg-color: #fbf9f5;
             --primary-gold: #c5a059;
+            --accent-green: #738276;
             --dark-text: #2c2c2c;
             --white: #ffffff;
             --border-gold: #e2d3b3;
@@ -76,7 +77,7 @@
             text-transform: uppercase;
             letter-spacing: 5px;
             color: #4a4033;
-            background: rgba(255, 255, 255, 0.9);
+            background: rgba(255, 255, 255, 0.95);
             padding: 12px 24px;
             border-radius: 25px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.2);
@@ -95,11 +96,10 @@
             pointer-events: none;
         }
 
-        /* --- PREMIÈRE PAGE DU SITE --- */
+        /* --- PREMIÈRE PAGE DU SITE (STYLE BOTANIQUE & EUCALYPTUS) --- */
         header {
             height: 100vh;
-            background: linear-gradient(to bottom, rgba(0,0,0,0.25), rgba(0,0,0,0.8)), url('5a58078b-6ecd-4568-ad2f-5400f911b929.jpg') no-repeat center center/cover;
-            filter: grayscale(100%);
+            background: linear-gradient(to bottom, rgba(115, 130, 118, 0.3), rgba(44, 44, 44, 0.85)), url('5a58078b-6ecd-4568-ad2f-5400f911b929.jpg') no-repeat center center/cover;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -110,11 +110,7 @@
             position: relative;
         }
 
-        header * {
-            filter: none;
-        }
-
-        /* Guirlandes lumineuses animées style clignotement doux */
+        /* Guirlandes lumineuses animées */
         .fairy-lights {
             display: flex;
             justify-content: space-around;
@@ -143,7 +139,7 @@
 
         .header-verse {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 1.25rem; /* Agrandit le verset */
+            font-size: 1.25rem;
             font-style: italic;
             max-width: 360px;
             line-height: 1.5;
@@ -177,7 +173,6 @@
             margin: 15px 0 5px 0;
         }
 
-        /* Noms en brillance intense et élégante */
         .couple-names {
             font-family: 'Cormorant Garamond', serif;
             font-size: 2.6rem;
@@ -211,7 +206,6 @@
             margin-bottom: 15px;
         }
 
-        /* Date plus grande et mise en valeur */
         .date-box {
             display: flex;
             align-items: center;
@@ -242,7 +236,7 @@
 
         .date-number {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 2.8rem; /* Agrandit la date */
+            font-size: 2.8rem;
             color: #fff;
             line-height: 1;
             margin: 2px 0;
@@ -250,7 +244,7 @@
         }
 
         .date-year {
-            font-size: 1.1rem; /* Agrandit l'année */
+            font-size: 1.1rem;
             letter-spacing: 4px;
             color: #fff;
             font-weight: 600;
@@ -278,7 +272,7 @@
             border-radius: 12px;
             padding: 20px;
             margin-bottom: 20px;
-            box-shadow: 0 4px 15px rgba(197, 160, 89, 0.08);
+            box-shadow: 0 4px 15px rgba(115, 130, 118, 0.1);
             border: 1px solid var(--border-gold);
             text-align: left;
         }
@@ -313,7 +307,7 @@
 
         .rsvp-btn {
             display: block;
-            background-color: #8c7355;
+            background-color: var(--accent-green);
             color: var(--white);
             text-decoration: none;
             padding: 14px;
@@ -321,12 +315,12 @@
             font-weight: 500;
             letter-spacing: 1px;
             margin-top: 20px;
-            box-shadow: 0 4px 10px rgba(140, 115, 85, 0.3);
+            box-shadow: 0 4px 10px rgba(115, 130, 118, 0.3);
             transition: background 0.3s;
         }
 
         .rsvp-btn:hover {
-            background-color: #6e593f;
+            background-color: #5c6a5f;
         }
 
         footer {
@@ -338,12 +332,11 @@
             letter-spacing: 2px;
         }
     
-        /* --- SECTION COMPTE À REBOURS --- */
+        /* --- SECTION COMPTE À REBOURS (UNIFORME AVEC LE STYLE DE LA VIDÉO) --- */
         .countdown-section {
             width: 100%;
             height: 100vh;
-            background: linear-gradient(to bottom, rgba(0,0,0,0.25), rgba(0,0,0,0.8)), url('aeae1b91-988d-4362-a756-784f562ab442.jpg') no-repeat center center/cover;
-            filter: grayscale(100%);
+            background: linear-gradient(to bottom, rgba(115, 130, 118, 0.4), rgba(44, 44, 44, 0.85)), url('aeae1b91-988d-4362-a756-784f562ab442.jpg') no-repeat center center/cover;
             position: relative;
             display: flex;
             flex-direction: column;
@@ -356,17 +349,13 @@
             padding: 30px 20px;
         }
 
-        .countdown-section * {
-            filter: none;
-        }
-
         .countdown-overlay {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.7));
+            background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.65));
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -377,11 +366,11 @@
         .countdown-title-script {
             font-family: 'Cormorant Garamond', serif;
             font-style: italic;
-            font-size: 3rem;
+            font-size: 3.5rem;
             line-height: 0.8;
             margin-bottom: -5px;
             color: #ffffff;
-            text-shadow: 0 0 10px rgba(255,255,255,0.8);
+            text-shadow: 0 0 15px rgba(255,255,255,0.8);
         }
 
         .countdown-title {
@@ -447,7 +436,6 @@
             filter: drop-shadow(0 2px 5px rgba(0,0,0,0.5));
             animation: pulse 2s infinite;
         }
-
     </style>
 </head>
 <body>
