@@ -337,6 +337,117 @@
             font-family: 'Cormorant Garamond', serif;
             letter-spacing: 2px;
         }
+    
+        /* --- SECTION COMPTE À REBOURS --- */
+        .countdown-section {
+            width: 100%;
+            height: 100vh;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.25), rgba(0,0,0,0.8)), url('aeae1b91-988d-4362-a756-784f562ab442.jpg') no-repeat center center/cover;
+            filter: grayscale(100%);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #ffffff;
+            overflow: hidden;
+            margin: 0;
+            padding: 30px 20px;
+        }
+
+        .countdown-section * {
+            filter: none;
+        }
+
+        .countdown-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.7));
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .countdown-title-script {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 3rem;
+            line-height: 0.8;
+            margin-bottom: -5px;
+            color: #ffffff;
+            text-shadow: 0 0 10px rgba(255,255,255,0.8);
+        }
+
+        .countdown-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 500;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+            color: #ffffff;
+        }
+
+        .countdown-subtitle {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.65rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #dddddd;
+            margin-bottom: 30px;
+        }
+
+        .countdown-timer {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 25px;
+        }
+
+        .time-block {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .time-block span:first-child {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.4rem;
+            font-weight: 600;
+            color: #ffffff;
+            line-height: 1;
+            text-shadow: 0 0 10px rgba(0,0,0,0.8);
+        }
+
+        .time-label {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.55rem;
+            letter-spacing: 2px;
+            color: #cccccc;
+            margin-top: 5px;
+            text-transform: uppercase;
+        }
+
+        .separator {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            color: var(--primary-gold);
+            margin-top: -15px;
+        }
+
+        .countdown-rings {
+            font-size: 1.8rem;
+            filter: drop-shadow(0 2px 5px rgba(0,0,0,0.5));
+            animation: pulse 2s infinite;
+        }
+
     </style>
 </head>
 <body>
@@ -384,6 +495,42 @@
                 <div class="date-line"></div>
             </div>
         </header>
+
+        <!-- SECTION COMPTE A REBOURS -->
+        <div class="countdown-section">
+            <div class="countdown-overlay">
+                <div class="countdown-title-script">le</div>
+                <div class="countdown-title">COMPTE À REBOURS</div>
+                <div class="countdown-subtitle">JUSQU'AU JOUR | A COMMENCÉ...</div>
+                
+                <div class="countdown-timer">
+                    <div class="time-block">
+                        <span id="days">000</span>
+                        <span class="time-label">JOURS</span>
+                    </div>
+                    <span class="separator">:</span>
+                    <div class="time-block">
+                        <span id="hours">00</span>
+                        <span class="time-label">HEURES</span>
+                    </div>
+                    <span class="separator">:</span>
+                    <div class="time-block">
+                        <span id="minutes">00</span>
+                        <span class="time-label">MINUTES</span>
+                    </div>
+                    <span class="separator">:</span>
+                    <div class="time-block">
+                        <span id="seconds">00</span>
+                        <span class="time-label">SECONDES</span>
+                    </div>
+                </div>
+
+                <div class="countdown-rings">
+                    💍
+                </div>
+            </div>
+        </div>
+
 
         <div class="content-section">
 
@@ -469,6 +616,32 @@
             const envelope = document.getElementById('envelope-screen');
             envelope.classList.add('fade-out');
         }
+    </script>
+
+
+    <script>
+        // Compte à rebours jusqu'au 15 Samedi 2027 (ex: 15 juin 2027 ou date cible exacte)
+        const weddingDate = new Date("June 15, 2027 13:30:00").getTime();
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = weddingDate - now;
+
+            if (distance > 0) {
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                document.getElementById("days").innerText = String(days).padStart(3, '0');
+                document.getElementById("hours").innerText = String(hours).padStart(2, '0');
+                document.getElementById("minutes").innerText = String(minutes).padStart(2, '0');
+                document.getElementById("seconds").innerText = String(seconds).padStart(2, '0');
+            }
+        }
+
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
     </script>
 
 </body>
