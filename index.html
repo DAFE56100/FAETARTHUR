@@ -328,6 +328,15 @@
             font-family: 'Cormorant Garamond', serif;
             letter-spacing: 2px;
         }
+
+        .footer-copyright {
+            font-size: 0.65rem;
+            color: #aaa;
+            font-family: 'Montserrat', sans-serif;
+            letter-spacing: 1px;
+            margin-top: -15px;
+            padding-bottom: 20px;
+        }
     
         /* --- SECTION COMPTE À REBOURS --- */
         .countdown-section {
@@ -837,7 +846,6 @@
 <body>
 
     <!-- AUDIO DE FOND -->
-    <!-- Remplacez "musique.mp3" par le nom ou le lien de votre fichier audio -->
     <audio id="bg-music" loop>
         <source src="musique.mp3" type="audio/mp3">
         Votre navigateur ne supporte pas l'élément audio.
@@ -1068,6 +1076,9 @@
             <footer>
                 ARTHUR & FAHASOAVANA — 2027
             </footer>
+            <div class="footer-copyright">
+                Copyright RFN project 2026
+            </div>
 
         </div>
     </div>
@@ -1077,14 +1088,12 @@
             const envelope = document.getElementById('envelope-screen');
             envelope.classList.add('fade-out');
 
-            // Lancer la musique au clic sur l'enveloppe
             const music = document.getElementById('bg-music');
             music.play().catch(error => {
                 console.log("Lecture audio bloquée ou fichier manquant :", error);
             });
         }
 
-        // Fonction pour couper/Activer la musique via le bouton 🎵
         function toggleAudio() {
             const music = document.getElementById('bg-music');
             const controlBtn = document.getElementById('audio-control');
