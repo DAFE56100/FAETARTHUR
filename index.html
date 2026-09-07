@@ -53,6 +53,30 @@
             }
         }
 
+        /* --- BOUTON AUDIO FLOTTANT --- */
+        #audio-control {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid var(--border-gold);
+            border-radius: 50%;
+            width: 45px;
+            height: 45px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            font-size: 1.2rem;
+            transition: transform 0.2s;
+        }
+
+        #audio-control:hover {
+            transform: scale(1.1);
+        }
+
         /* --- ÉCRAN ENVELOPPE --- */
         #envelope-screen {
             position: fixed;
@@ -812,6 +836,18 @@
 </head>
 <body>
 
+    <!-- AUDIO DE FOND -->
+    <!-- Remplacez "musique.mp3" par le nom ou le lien de votre fichier audio -->
+    <audio id="bg-music" loop>
+        <source src="musique.mp3" type="audio/mp3">
+        Votre navigateur ne supporte pas l'élément audio.
+    </audio>
+
+    <!-- BOUTON CONTRÔLE MUSIQUE -->
+    <div id="audio-control" onclick="toggleAudio()" title="Activer / Couper la musique">
+        🎵
+    </div>
+
     <div class="phone-container">
 
         <!-- ÉCRAN ENVELOPPE -->
@@ -1011,7 +1047,7 @@
                 </ul>
             </div>
 
-            <!-- RSVP MODIFIÉ -->
+            <!-- RSVP -->
             <div class="card rsvp-card-custom">
                 <div class="rsvp-script-top">votre</div>
                 <div class="rsvp-main-heading">RÉPONSE</div>
@@ -1040,6 +1076,27 @@
         function openInvitation() {
             const envelope = document.getElementById('envelope-screen');
             envelope.classList.add('fade-out');
+
+            // Lancer la musique au clic sur l'enveloppe
+            const music = document.getElementById('bg-music');
+            music.play().catch(error => {
+                console.log("Lecture audio bloquée ou fichier manquant :", error);
+            });
+        }
+
+        // Fonction pour couper/Activer la musique via le bouton 🎵
+        function toggleAudio() {
+            const music = document.getElementById('bg-music');
+            const controlBtn = document.getElementById('audio-control');
+            if (music.paused) {
+                music.play();
+                controlBtn.style.opacity = "1";
+                controlBtn.style.filter = "none";
+            } else {
+                music.pause();
+                controlBtn.style.opacity = "0.5";
+                controlBtn.style.filter = "grayscale(100%)";
+            }
         }
 
         const weddingDate = new Date("June 15, 2027 13:30:00").getTime();
