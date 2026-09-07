@@ -125,36 +125,40 @@
             text-align: center;
         }
 
-        /* --- STYLE UNIFIÉ POUR LES CARTES PRINCIPALES --- */
-        .unified-card {
+        /* --- STYLE SECTION PHOTO EN FOND + TEXTE EN DESSOUS --- */
+        .photo-bg-card {
             background: linear-gradient(to bottom, #ffffff, #f7f5ef);
             border: 1px solid var(--border-gold);
             border-radius: 16px;
-            padding: 25px 20px;
-            text-align: center;
+            overflow: hidden;
             box-shadow: 0 8px 25px rgba(115, 130, 118, 0.12);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .card-bg-img {
+            width: 100%;
+            height: 260px;
+            background-size: cover;
+            background-position: center;
             position: relative;
-            overflow: hidden;
-            margin-bottom: 20px;
         }
 
-        /* --- IMAGE DANS LES CARTES --- */
-        .card-img-container {
+        .card-bg-img::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
             width: 100%;
-            border-radius: 12px;
-            overflow: hidden;
-            margin-bottom: 20px;
-            box-shadow: 0 6px 15px rgba(0,0,0,0.15);
-            border: 2px solid var(--border-gold);
-            max-height: 250px;
+            height: 60px;
+            background: linear-gradient(to top, rgba(247, 245, 239, 1), rgba(247, 245, 239, 0));
         }
 
-        .card-img {
-            width: 100%;
-            height: auto;
-            display: block;
+        .card-content-below {
+            padding: 15px 20px 25px 20px;
         }
 
+        /* --- TYPOGRAPHIES & ELEMENTS --- */
         .header-verse {
             font-family: 'Cormorant Garamond', serif;
             font-size: 1.1rem;
@@ -162,7 +166,7 @@
             max-width: 360px;
             line-height: 1.5;
             color: var(--dark-text);
-            margin: 0 auto 20px auto;
+            margin: 0 auto 15px auto;
             border-bottom: 1px dashed var(--border-gold);
             padding-bottom: 15px;
         }
@@ -182,7 +186,7 @@
             letter-spacing: 3px;
             text-transform: uppercase;
             color: var(--accent-green);
-            margin: 12px 0 5px 0;
+            margin: 10px 0 5px 0;
         }
 
         .couple-names {
@@ -208,7 +212,7 @@
             letter-spacing: 3px;
             text-transform: uppercase;
             color: #666;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
 
         .date-box {
@@ -810,66 +814,64 @@
 
         <div class="content-section" style="padding-top: 40px;">
 
-            <!-- ENTÊTE UNIFIÉE AVEC LA 1ère PHOTO -->
-            <div class="unified-card">
-                <div class="card-img-container">
-                    <img src="5a58078b-6ecd-4568-ad2f-5400f911b929.jpg" alt="Arthur & Fahasoavana" class="card-img">
-                </div>
-
-                <div class="header-verse">
-                    "Maintenant, trois choses sont toujours là: la foi, l'espérance et l'amour. Mais la plus grande des trois, c'est l'amour."<br>
-                    <strong style="font-size: 0.9rem; color: var(--primary-gold); display: block; margin-top: 6px;">— I Cor. 13:13</strong>
-                </div>
-
-                <div class="we-do-title">Nous Disons Oui</div>
-                <div class="subtitle-family">Unis avec leurs familles</div>
-                <div class="couple-names">Arthur <span>et</span> Fahasoavana</div>
-                <div class="invite-text">Ont la joie de vous inviter à leur mariage</div>
-
-                <div class="date-box">
-                    <div class="date-line"></div>
-                    <div class="date-center">
-                        <div class="date-day">Samedi</div>
-                        <div class="date-number">15 Mai</div>
-                        <div class="date-year">2027</div>
+            <!-- ENTÊTE UNIFIÉE AVEC PHOTO EN HAUT ET TEXTE EN DESSOUS -->
+            <div class="photo-bg-card">
+                <div class="card-bg-img" style="background-image: url('5a58078b-6ecd-4568-ad2f-5400f911b929.jpg');"></div>
+                <div class="card-content-below">
+                    <div class="header-verse">
+                        "Maintenant, trois choses sont toujours là: la foi, l'espérance et l'amour. Mais la plus grande des trois, c'est l'amour."<br>
+                        <strong style="font-size: 0.9rem; color: var(--primary-gold); display: block; margin-top: 6px;">— I Cor. 13:13</strong>
                     </div>
-                    <div class="date-line"></div>
+
+                    <div class="we-do-title">Nous Disons Oui</div>
+                    <div class="subtitle-family">Unis avec leurs familles</div>
+                    <div class="couple-names">Arthur <span>et</span> Fahasoavana</div>
+                    <div class="invite-text">Ont la joie de vous inviter à leur mariage</div>
+
+                    <div class="date-box">
+                        <div class="date-line"></div>
+                        <div class="date-center">
+                            <div class="date-day">Samedi</div>
+                            <div class="date-number">15 Mai</div>
+                            <div class="date-year">2027</div>
+                        </div>
+                        <div class="date-line"></div>
+                    </div>
                 </div>
             </div>
 
-            <!-- COMPTE À REBOURS UNIFIÉ AVEC LA 2ème PHOTO -->
-            <div class="unified-card">
-                <div class="card-img-container">
-                    <img src="aeae1b91-988d-4362-a756-784f562ab442.jpg" alt="Compte à rebours" class="card-img">
-                </div>
+            <!-- COMPTE À REBOURS UNIFIÉ AVEC PHOTO EN HAUT ET TEXTE EN DESSOUS -->
+            <div class="photo-bg-card">
+                <div class="card-bg-img" style="background-image: url('aeae1b91-988d-4362-a756-784f562ab442.jpg');"></div>
+                <div class="card-content-below">
+                    <div class="countdown-title-script">le</div>
+                    <div class="countdown-title">COMPTE À REBOURS</div>
+                    <div class="countdown-subtitle">Jusqu'au grand jour...</div>
+                    
+                    <div class="countdown-timer">
+                        <div class="time-block">
+                            <span id="days">000</span>
+                            <span class="time-label">JOURS</span>
+                        </div>
+                        <span class="separator">:</span>
+                        <div class="time-block">
+                            <span id="hours">00</span>
+                            <span class="time-label">HEURES</span>
+                        </div>
+                        <span class="separator">:</span>
+                        <div class="time-block">
+                            <span id="minutes">00</span>
+                            <span class="time-label">MINUTES</span>
+                        </div>
+                        <span class="separator">:</span>
+                        <div class="time-block">
+                            <span id="seconds">00</span>
+                            <span class="time-label">SECONDES</span>
+                        </div>
+                    </div>
 
-                <div class="countdown-title-script">le</div>
-                <div class="countdown-title">COMPTE À REBOURS</div>
-                <div class="countdown-subtitle">Jusqu'au grand jour...</div>
-                
-                <div class="countdown-timer">
-                    <div class="time-block">
-                        <span id="days">000</span>
-                        <span class="time-label">JOURS</span>
-                    </div>
-                    <span class="separator">:</span>
-                    <div class="time-block">
-                        <span id="hours">00</span>
-                        <span class="time-label">HEURES</span>
-                    </div>
-                    <span class="separator">:</span>
-                    <div class="time-block">
-                        <span id="minutes">00</span>
-                        <span class="time-label">MINUTES</span>
-                    </div>
-                    <span class="separator">:</span>
-                    <div class="time-block">
-                        <span id="seconds">00</span>
-                        <span class="time-label">SECONDES</span>
-                    </div>
+                    <div class="countdown-rings">💍</div>
                 </div>
-
-                <div class="countdown-rings">💍</div>
             </div>
 
             <!-- PROGRAMME / LA JOURNÉE -->
