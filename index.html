@@ -53,6 +53,26 @@
             }
         }
 
+        /* --- ÉLÉMENT DÉCORATIF FLORAL NATUREL --- */
+        .floral-divider {
+            text-align: center;
+            margin: 25px auto 15px auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0.85;
+        }
+
+        .floral-divider svg {
+            width: 60px;
+            height: 25px;
+            fill: var(--primary-gold);
+        }
+
+        .floral-divider-green svg {
+            fill: var(--accent-green);
+        }
+
         /* --- BOUTON AUDIO FLOTTANT --- */
         #audio-control {
             position: fixed;
@@ -125,57 +145,6 @@
             text-align: center;
         }
 
-        /* --- DÉCORATIONS FLORALES ÉLÉGANTES (VRAIES FLEURS) --- */
-        .floral-header-decor {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 15px;
-        }
-
-        .floral-header-decor img {
-            width: 50px;
-            height: 50px;
-            object-fit: cover;
-            border-radius: 50%;
-            border: 1.5px solid var(--border-gold);
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        }
-
-        .floral-divider-elegant {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 15px;
-            margin: 30px 0;
-        }
-
-        .floral-divider-elegant img {
-            width: 60px;
-            height: 60px;
-            object-fit: cover;
-            border-radius: 50%;
-            border: 2px solid var(--border-gold);
-            box-shadow: 0 4px 12px rgba(115, 130, 118, 0.2);
-        }
-
-        .section-floral-wrap {
-            position: relative;
-            margin-top: 35px;
-            margin-bottom: 15px;
-        }
-
-        .section-floral-wrap img.bg-flower-icon {
-            width: 45px;
-            height: 45px;
-            object-fit: cover;
-            border-radius: 50%;
-            border: 1px solid var(--border-gold);
-            margin-bottom: 8px;
-            box-shadow: 0 3px 8px rgba(0,0,0,0.12);
-        }
-
         /* --- STYLE CARTE AVEC BACKGROUND CENTRÉ SUR LES VISAGES --- */
         .photo-bg-card {
             background: linear-gradient(to bottom, #ffffff, #f7f5ef);
@@ -185,22 +154,6 @@
             box-shadow: 0 8px 25px rgba(115, 130, 118, 0.12);
             margin-bottom: 20px;
             text-align: center;
-            position: relative;
-        }
-
-        /* Cadre floral discret en coin de carte */
-        .photo-bg-card::before {
-            content: '';
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            width: 35px;
-            height: 35px;
-            background: url('acc_1.png') no-repeat center center/cover;
-            border-radius: 50%;
-            border: 1px solid var(--border-gold);
-            z-index: 5;
-            opacity: 0.85;
         }
 
         .card-bg-img {
@@ -881,18 +834,10 @@
 
         <div class="content-section" style="padding-top: 40px;">
 
-            <!-- ENTÊTE UNIFIÉE AVEC CENTRAGE SUR LES TÊTES ET DÉCORATION FLORALE -->
+            <!-- ENTÊTE UNIFIÉE AVEC CENTRAGE SUR LES TÊTES -->
             <div class="photo-bg-card">
                 <div class="card-bg-img" style="background-image: url('5a58078b-6ecd-4568-ad2f-5400f911b929.jpg'); background-position: center 15%;"></div>
                 <div class="card-content-below">
-                    
-                    <!-- Vraies fleurs décoratives en en-tête -->
-                    <div class="floral-header-decor">
-                        <img src="acc_3.png" alt="Fleur élégante">
-                        <img src="acc_1.png" alt="Fleur élégante">
-                        <img src="acc_2.png" alt="Fleur élégante">
-                    </div>
-
                     <div class="header-verse">
                         "Maintenant, trois choses sont toujours là: la foi, l'espérance et l'amour. Mais la plus grande des trois, c'est l'amour."<br>
                         <strong style="font-size: 0.9rem; color: var(--primary-gold); display: block; margin-top: 6px;">— I Cor. 13:13</strong>
@@ -915,7 +860,17 @@
                 </div>
             </div>
 
-            <!-- COMPTE À REBOURS UNIFIÉ AVEC DÉCORATION FLORALE -->
+            <!-- FLEUR DÉCORATIVE NATURELLE 1 -->
+            <div class="floral-divider">
+                <svg viewBox="0 0 100 30" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M50,15 C40,5 20,5 10,15 C20,25 40,25 50,15 Z M50,15 C60,5 80,5 90,15 C80,25 60,25 50,15 Z" fill="none" stroke="currentColor" stroke-width="1.5"/>
+                    <circle cx="50" cy="15" r="3" fill="currentColor"/>
+                    <path d="M42,12 C45,8 48,10 50,15 C48,20 45,22 42,18 Z" opacity="0.6"/>
+                    <path d="M58,12 C55,8 52,10 50,15 C52,20 55,22 58,18 Z" opacity="0.6"/>
+                </svg>
+            </div>
+
+            <!-- COMPTE À REBOURS UNIFIÉ AVEC CENTRAGE OPTIMAL -->
             <div class="photo-bg-card">
                 <div class="card-bg-img" style="background-image: url('aeae1b91-988d-4362-a756-784f562ab442.jpg'); background-position: center 15%;"></div>
                 <div class="card-content-below">
@@ -949,20 +904,20 @@
                 </div>
             </div>
 
-            <!-- PROGRAMME / LA JOURNÉE -->
-            <div class="section-floral-wrap">
-                <img src="acc_4.png" alt="Fleur décorative" class="bg-flower-icon">
-                <div class="programme-header-box">
-                    <div class="programme-script">la</div>
-                    <div class="programme-main-title">JOURNÉE 💍</div>
-                </div>
+            <!-- FLEUR DÉCORATIVE NATURELLE 2 -->
+            <div class="floral-divider floral-divider-green">
+                <svg viewBox="0 0 100 30" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10,15 Q30,5 50,15 Q70,25 90,15" fill="none" stroke="currentColor" stroke-width="1.5"/>
+                    <circle cx="50" cy="15" r="4" fill="currentColor"/>
+                    <path d="M30,11 Q35,5 42,12" fill="none" stroke="currentColor" stroke-width="1"/>
+                    <path d="M70,19 Q65,25 58,18" fill="none" stroke="currentColor" stroke-width="1"/>
+                </svg>
             </div>
 
-            <!-- Séparateur de vraies fleurs -->
-            <div class="floral-divider-elegant">
-                <img src="acc_1.png" alt="Fleur du thème">
-                <img src="acc_3.png" alt="Fleur du thème">
-                <img src="acc_5.png" alt="Fleur du thème">
+            <!-- PROGRAMME / LA JOURNÉE -->
+            <div class="programme-header-box" style="margin-top: 10px;">
+                <div class="programme-script">la</div>
+                <div class="programme-main-title">JOURNÉE 💍</div>
             </div>
 
             <div class="timeline-container">
@@ -999,11 +954,18 @@
                 </div>
             </div>
 
-            <!-- LIEU DE RÉCEPTION -->
-            <div class="section-floral-wrap" style="margin-top: 40px;">
-                <img src="acc_2.png" alt="Fleur décorative" class="bg-flower-icon">
-                <h2 class="section-title" style="margin-top: 0;">Lieu de Réception</h2>
+            <!-- FLEUR DÉCORATIVE NATURELLE 3 -->
+            <div class="floral-divider">
+                <svg viewBox="0 0 100 30" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M50,5 C35,20 65,20 50,5 Z" fill="currentColor" opacity="0.8"/>
+                    <path d="M30,18 C20,10 35,5 45,12 Z" fill="currentColor" opacity="0.6"/>
+                    <path d="M70,18 C80,10 65,5 55,12 Z" fill="currentColor" opacity="0.6"/>
+                    <line x1="50" y1="15" x2="50" y2="28" stroke="currentColor" stroke-width="1.5"/>
+                </svg>
             </div>
+
+            <!-- LIEU DE RÉCEPTION -->
+            <h2 class="section-title" style="margin-top: 10px;">Lieu de Réception</h2>
 
             <div class="card reception-card">
                 <div class="reception-script">le</div>
@@ -1032,12 +994,16 @@
                 </ul>
             </div>
 
-            <!-- Code Vestimentaire -->
-            <div class="section-floral-wrap">
-                <img src="acc_3.png" alt="Fleur décorative" class="bg-flower-icon">
-                <h2 class="section-title" style="margin-top: 0;">Code Vestimentaire</h2>
+            <!-- FLEUR DÉCORATIVE NATURELLE 4 -->
+            <div class="floral-divider floral-divider-green">
+                <svg viewBox="0 0 100 30" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M20,15 Q50,0 80,15 Q50,30 20,15 Z" fill="none" stroke="currentColor" stroke-width="1.5"/>
+                    <circle cx="50" cy="15" r="3" fill="currentColor"/>
+                </svg>
             </div>
 
+            <!-- Code Vestimentaire -->
+            <h2 class="section-title" style="margin-top: 10px;">Code Vestimentaire</h2>
             <div class="card dress-code-card">
                 <p class="dress-code-intro">Pour la cérémonie, nous vous invitons à privilégier une <strong>tenue élégante</strong>. N'hésitez pas à accessoiriser votre tenue afin d'y apporter une touche raffinée et personnelle.</p>
                 
@@ -1063,11 +1029,16 @@
                 </div>
             </div>
 
-            <!-- Menu -->
-            <div class="section-floral-wrap">
-                <img src="acc_5.png" alt="Fleur décorative" class="bg-flower-icon">
-                <h2 class="section-title" style="margin-top: 0;">Menu de la Réception</h2>
+            <!-- FLEUR DÉCORATIVE NATURELLE 5 -->
+            <div class="floral-divider">
+                <svg viewBox="0 0 100 30" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M50,15 C40,5 20,5 10,15 C20,25 40,25 50,15 Z M50,15 C60,5 80,5 90,15 C80,25 60,25 50,15 Z" fill="none" stroke="currentColor" stroke-width="1.5"/>
+                    <circle cx="50" cy="15" r="3" fill="currentColor"/>
+                </svg>
             </div>
+
+            <!-- Menu -->
+            <h2 class="section-title" style="margin-top: 10px;">Menu de la Réception</h2>
             
             <div class="card">
                 <h3>Entrées</h3>
@@ -1093,12 +1064,16 @@
                 </ul>
             </div>
 
-            <!-- RSVP (Numéro d'Arthur corrigé en +33 6) -->
+            <!-- FLEUR DÉCORATIVE NATURELLE 6 -->
+            <div class="floral-divider floral-divider-green">
+                <svg viewBox="0 0 100 30" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10,15 Q30,5 50,15 Q70,25 90,15" fill="none" stroke="currentColor" stroke-width="1.5"/>
+                    <circle cx="50" cy="15" r="4" fill="currentColor"/>
+                </svg>
+            </div>
+
+            <!-- RSVP -->
             <div class="card rsvp-card-custom">
-                <div class="floral-header-decor" style="margin-bottom: 5px;">
-                    <img src="acc_4.png" alt="Fleur élégante" style="width: 35px; height: 35px;">
-                    <img src="acc_1.png" alt="Fleur élégante" style="width: 35px; height: 35px;">
-                </div>
                 <div class="rsvp-script-top">votre</div>
                 <div class="rsvp-main-heading">RÉPONSE</div>
 
@@ -1110,7 +1085,7 @@
                 <div class="rsvp-sub-instruction">Merci de confirmer votre présence.</div>
 
                 <div style="display: flex; flex-direction: column; gap: 10px; align-items: center;">
-                    <a href="tel:+3365706021" class="rsvp-action-btn">📞 Arthur : +33 6 57 06 02 1</a>
+                    <a href="tel:+3345706021" class="rsvp-action-btn">📞 Arthur : +33 6 57 06 02 1</a>
                     <a href="tel:+33601105448" class="rsvp-action-btn" style="background-color: #333;">📞 Fahasoavana : +33 6 01 10 54 48</a>
                 </div>
             </div>
@@ -1119,7 +1094,7 @@
                 ARTHUR & FAHASOAVANA — 2027
             </footer>
             <div class="footer-copyright">
-                Copyright RFN project 2026 +33 6 68 54 36 87
+                Copyright RN project-2026 (+33 6 68 54 36 87)
             </div>
 
         </div>
