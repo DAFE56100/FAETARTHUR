@@ -125,6 +125,40 @@
             text-align: center;
         }
 
+        /* --- DÉCORATIONS FLORALES RÉELLES --- */
+        .floral-divider {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            margin: 25px 0;
+        }
+
+        .floral-divider img {
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 2px solid var(--border-gold);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .floral-header-badge {
+            width: 75px;
+            height: 75px;
+            margin: 0 auto 15px auto;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 2px solid var(--primary-gold);
+            box-shadow: 0 4px 12px rgba(197, 160, 89, 0.25);
+        }
+
+        .floral-header-badge img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
         /* --- STYLE CARTE AVEC BACKGROUND CENTRÉ SUR LES VISAGES --- */
         .photo-bg-card {
             background: linear-gradient(to bottom, #ffffff, #f7f5ef);
@@ -140,7 +174,7 @@
             width: 100%;
             height: 280px;
             background-size: cover;
-            background-position: center 20%; /* Ajusté pour afficher correctement les têtes/visages */
+            background-position: center 20%;
             position: relative;
         }
 
@@ -818,6 +852,12 @@
             <div class="photo-bg-card">
                 <div class="card-bg-img" style="background-image: url('5a58078b-6ecd-4568-ad2f-5400f911b929.jpg'); background-position: center 15%;"></div>
                 <div class="card-content-below">
+                    
+                    <!-- Décoration florale réelle (Eucalyptus & Rose poudrée) -->
+                    <div class="floral-header-badge">
+                        <img src="acc_1.png" alt="Décoration florale">
+                    </div>
+
                     <div class="header-verse">
                         "Maintenant, trois choses sont toujours là: la foi, l'espérance et l'amour. Mais la plus grande des trois, c'est l'amour."<br>
                         <strong style="font-size: 0.9rem; color: var(--primary-gold); display: block; margin-top: 6px;">— I Cor. 13:13</strong>
@@ -878,6 +918,13 @@
             <div class="programme-header-box" style="margin-top: 30px;">
                 <div class="programme-script">la</div>
                 <div class="programme-main-title">JOURNÉE 💍</div>
+            </div>
+
+            <!-- Séparateur de vraies fleurs aux tons du thème -->
+            <div class="floral-divider">
+                <img src="acc_2.png" alt="Fleur thème mariage">
+                <img src="acc_3.png" alt="Fleur thème mariage">
+                <img src="acc_4.png" alt="Fleur thème mariage">
             </div>
 
             <div class="timeline-container">
@@ -998,7 +1045,7 @@
                 </ul>
             </div>
 
-            <!-- RSVP -->
+            <!-- RSVP (Numéro d'Arthur corrigé en +33 6) -->
             <div class="card rsvp-card-custom">
                 <div class="rsvp-script-top">votre</div>
                 <div class="rsvp-main-heading">RÉPONSE</div>
@@ -1011,7 +1058,7 @@
                 <div class="rsvp-sub-instruction">Merci de confirmer votre présence.</div>
 
                 <div style="display: flex; flex-direction: column; gap: 10px; align-items: center;">
-                    <a href="tel:+3345706021" class="rsvp-action-btn">📞 Arthur : +33 4 57 06 02 1</a>
+                    <a href="tel:+3365706021" class="rsvp-action-btn">📞 Arthur : +33 6 57 06 02 1</a>
                     <a href="tel:+33601105448" class="rsvp-action-btn" style="background-color: #333;">📞 Fahasoavana : +33 6 01 10 54 48</a>
                 </div>
             </div>
@@ -1020,7 +1067,7 @@
                 ARTHUR & FAHASOAVANA — 2027
             </footer>
             <div class="footer-copyright">
-                Copyright RFN project 2026 +33 6 68 54 36 87
+                Copyright RN project 2026 (+33 6 68 54 36 87)
             </div>
 
         </div>
